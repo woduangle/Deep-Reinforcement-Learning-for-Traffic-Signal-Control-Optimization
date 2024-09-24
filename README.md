@@ -26,7 +26,7 @@ DRL offers a promising approach to addressing the challenges of traditional traf
 
 ## Fundamental Architecture 
 
-![](resources\image.png)
+![Architecture](resources/image.png)
 
 - main(): The entry point of the program, likely responsible for initiating other modules and controlling the overall flow.
 - init: used for initializing variables, settings, or connections.
