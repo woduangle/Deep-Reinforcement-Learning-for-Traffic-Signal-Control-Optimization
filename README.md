@@ -5,6 +5,7 @@
 Deep Reinforcement Learning (DRL) has emerged as a powerful technique for optimizing various real-world systems. In the realm of traffic engineering, DRL has shown great promise in enhancing traffic signal control. By leveraging the capabilities of deep neural networks and reinforcement learning, DRL agents can learn to make optimal decisions in complex and dynamic traffic environments.
 
 ### The Challenges of Traditional Traffic Signal Control
+
 Traditional traffic signal control methods often rely on fixed-time or adaptive control strategies. These methods can be suboptimal in handling varying traffic conditions, especially during peak hours or in the presence of unexpected events.
 
 ### The Advantages of DRL in Traffic Signal Control
@@ -12,7 +13,9 @@ Traditional traffic signal control methods often rely on fixed-time or adaptive 
 - Complex Environments: DRL can handle the complexity of urban traffic networks, considering factors such as multiple intersections, varying traffic volumes, and pedestrian crossings.
 - Continuous Optimization: DRL allows for continuous improvement of control policies, as agents learn from experience and refine their decision-making process.
 - Real-time Decision Making: DRL agents can make decisions in real-time, responding quickly to changes in traffic conditions.
+
 ### DRL Framework for Traffic Signal Control
+
 A typical DRL framework for traffic signal control involves the following components:
 
 - State Representation: The agent's state is defined based on the current traffic conditions, such as queue lengths, occupancy rates, and vehicle counts.
