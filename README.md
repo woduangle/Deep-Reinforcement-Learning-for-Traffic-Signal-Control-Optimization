@@ -91,7 +91,7 @@ if __name__ == '__main__':
 
         # close
         print("this epsido has ended：", ep)
-        '''ciose simulation'''
+        '''close simulation'''
         close_env()
 
         '''save the data for this episode'''
@@ -131,8 +131,6 @@ if __name__ == '__main__':
 ## 13. NSHG-QL
 
 ## 14. NSHG-DQN
-
-
 
 ## 15. MFQ-MLP
 
