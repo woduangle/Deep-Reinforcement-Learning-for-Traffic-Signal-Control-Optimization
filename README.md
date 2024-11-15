@@ -40,20 +40,105 @@ DRL offers a promising approach to addressing the challenges of traditional traf
 - traci_ex: a module related to the TraCI (Traffic Control Interface) for SUMO, a traffic simulation software.
 - sumo_network: represents the network or environment used in a SUMO simulation.
 
-## Q-Learning
+## 1. [Q-Learning with Epsilon Greedy](./QL-epsilon_greedy/readme.md)
 
-## SARSA with UCB
+- [source code](QL-epsilon_greedy/)
 
-## 
+- Algorithm
 
-## 
+```python
+if __name__ == '__main__':
+    '''
+    initialize Agent and learn algorithm related parameters
+    '''
+    tls_agents = initialize_agents_by(agent_setting,rl_setting)  #
+    '''
+        start training round
+    '''
+    for ep in range(basic_setting['episode']):
+        print('-------------training round: ', ep, '-------------')
+        start_env(sumo_cmd=basic_setting['sumo_start_config_cmd'])  # initialize environment
+        prerun_env(pre_steps=basic_setting['pre_steps'])  # environmental preheating
+        # start running the simulation environment
+        start_time = get_env_time()  # the moment when the simulation environment starts
+        while get_env_time() < start_time + basic_setting['simulation_time']:
 
-## 
+            for agent in agent_setting.keys():  # traverse all agents
+                # obtain the current execution status of the Agent's actions and whether they have been completed
+                if tls_agents[agent].is_current_strategy_over() == False:  # the current action is being executed。。。
+                    continue  # if the current agent's strategy has not been fully executed, no action will be taken
+                # get status
+                # get_current_state(agent=tls_agents[agent])
+                # select action
+                select_action(agent=tls_agents[agent])
+                # write actions into the environment
+                deploy_action_into_env(agent=tls_agents[agent])
+            # perform a one-step simulation
+            simulation_step()
+            # subtract all Agent policy execution time counters by one
+            time_count_step(agent_list=tls_agents)
+            # traverse all agents
+            for agent in agent_setting.keys():
+                # retrieve the execution status of the Agent's actions and confirm if it has been completed
+                if tls_agents[agent].is_current_strategy_over() == False:  # the current action is being executed。。。
+                    continue  # if the current agent's strategy has not been fully executed, no action will be taken
+                # get reward
+                get_reward(agent=tls_agents[agent])
+                # get state
+                get_current_state(agent=tls_agents[agent])
+                # update table
+                update_q_table(agent=tls_agents[agent])
 
-## 
+        # close
+        print("this epsido has ended：", ep)
+        '''ciose simulation'''
+        close_env()
 
-## 
+        '''save the data for this episode'''
+        sd.save_ep_data(ep=ep)
 
-## 
+        '''save SUMO output data'''
+        save_sumo_output_data(ep)
 
-## 
+    '''
+    run completed, save data to file
+    '''
+    sd.save_data_to_file()
+```
+
+## 2. SARSA with UCB
+
+## 3. Actor-Critic(AC) with boltzmann
+
+## 4. A3C
+
+## 5. NatureDQN-DNN
+
+## 6. DDQN-DNN
+
+## 7. DuelingDQN-DNN
+
+## 8. DuelingDDQN-DNN(D3QN)
+
+## 9. DDPG
+
+## 10. Nash-QL
+
+## 11. Nash-DQN
+
+## 12. Nash-DuelingDQN
+
+## 13. NSHG-QL
+
+## 14. NSHG-DQN
+
+
+
+## 15. MFQ-MLP
+
+
+
+
+
+
+
