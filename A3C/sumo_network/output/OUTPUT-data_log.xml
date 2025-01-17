@@ -1,0 +1,31 @@
+***Starting server on port 8813 ***
+Loading net-file from 'sumo_network/example42.net.xml' ... done (8ms).
+Loading additional-files from 'sumo_network/busstops_def.add.xml' ... done (10ms).
+Loading additional-files from 'sumo_network/det_e3.add.xml' ... done (2ms).
+Loading additional-files from 'sumo_network/det_e2.add.xml' ... done (2ms).
+Loading additional-files from 'sumo_network/edgelane_dump.add.xml' ... done (3ms).
+Loading additional-files from 'sumo_network/signal-timing-dial.xml' ... done (10ms).
+Loading done.
+Simulation version 1.19.0 started with time: 0.00.
+Simulation ended at time: 3600.00
+Reason: TraCI requested termination.
+Performance: 
+ Duration: 7.87s
+ TraCI-Duration: 3.06s
+ Real time factor: 457.55
+ UPS: 47727.503813
+ UPS-Persons: 69702.846975
+Vehicles: 
+ Inserted: 3092 (Loaded: 3097)
+ Running: 102
+ Waiting: 0
+ Emergency Braking: 27
+Persons: 
+ Inserted: 590
+ Running: 229
+ Jammed: 20
+
+DijkstraRouter answered 9007 queries and explored 24.99 edges on average.
+DijkstraRouter spent 0.03s answering queries (0.00ms on average).
+DijkstraRouter answered 945 queries and explored 49.78 edges on average.
+DijkstraRouter spent 0.02s answering queries (0.02ms on average).
