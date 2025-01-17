@@ -1,0 +1,146 @@
+from traci_ex.basic_commands import *
+from traci_ex.value_retrieval import *
+from traci_ex.value_changing import *
+# import traci_ex
+import yaml
+from agent_ex.MFQ_MLP_tls_agent import *
+# import agent_ex
+import shutil
+
+
+def read_yaml(yaml_file):
+    """读取yaml文件"""
+    with open(yaml_file, 'rb') as f:
+        all_data = list(yaml.safe_load_all(f))  # 加载yaml文件，返回对应python的数据结构
+    return all_data
+
+
+def start_env(sumo_cmd):
+    """启动仿真"""
+    print('初始化仿真环境……')
+    simulation_start(sumoCmd=sumo_cmd)
+
+
+def close_env():
+    """关闭环境"""
+    simulation_close()
+
+
+def prerun_env(pre_steps):
+    """仿真预热"""
+    pre_run_simulation_to_prepare(pre_steps=pre_steps)
+
+
+def get_env_time():
+    """获取当前仿真的时间"""
+    return get_simulation_time()
+
+
+def env_step():
+    """运行环境前进一步"""
+    simulation_step()
+
+
+def initialize_agents_by(*args):
+    """初始化Agent"""
+    agent_settings = args[0]  # Agent参数——init中读取
+    hyper_setting = args[1]  # 超参数——init中读取
+    intersection_agents = {}  # 创建字典读取agent中内容
+    for key, agent_setting in agent_settings.items():
+        intersection_agents[key] = MFQMLP_TLSAgent(
+            agent_setting, hyper_setting)
+    return intersection_agents
+
+
+def get_current_state(agent):
+    """获得Agent当前状态"""
+    state_config = agent.state_config
+    state_val = []  # 初始化状态
+    for state_name in state_config['names']:  # 遍历每一个状态变量
+        func_name = state_config['func_names'][state_name]
+        paras = state_config['paras'][state_name]
+        val = eval(func_name)(paras)  # 返回状态的值
+        state_val.append(val)
+    agent.save_current_state(state_val)
+
+
+
+def select_action(agent, tls_agents):
+    """选择动作"""
+    # 1.获取该Agent的所有邻居
+    nbrs = agent.get_nbrs()
+    # 2.遍历该Agent的所有邻居
+    nei_probs = [0] * agent.action_size  # 存储所有neighbor的选择所有动作的概率和
+    for nbr in nbrs:
+        tls_agents[nbr].check_state_exist(tls_agents[nbr].state_current)  # 得到当前neighbor-agent的Q表
+        action_probs_numes = []  # 存储当前agent的所有动作期望
+        denom = 0  #
+        # 3.获取该Agent的所有邻居的动作概率
+        for i in tls_agents[nbr].action_names:  # 遍历当前agent的所有动作
+            try:
+                val = np.exp(tls_agents[nbr].get_q_value(str(tls_agents[nbr].state_current), i) / tls_agents[nbr].current_t)  # 当前动作的期望值
+                # val = np.exp(Q_nei.loc[str(tls_agents[nei].state_current), i] / self.temperature)
+            except OverflowError:
+                return i
+            action_probs_numes.append(val)
+            denom += val  # 不断叠加，得到当前agent所有动作期望和
+        action_probs = [x / denom for x in action_probs_numes]  # 得到当前agent的所有动作概率
+        c = np.array(nei_probs) + np.array(action_probs)
+        nei_probs = list(c)
+    # 4.存储该Agent的所有邻居的动作概率
+    agent.save_nbr_action_probs(nei_probs)
+    #
+    agent.select_action()
+
+
+def deploy_action_into_env(agent):
+    """将动作部署到环境中，等待执行"""
+    action_config = agent.action_config
+    action_name = agent.action_current
+    func_name = action_config['func_names'][action_name]
+    paras = action_config['paras'][action_name]
+    # 运行函数
+    eval(func_name)(paras)  # 执行状态函数
+
+
+def time_count_step(agent_list):
+    """将所有Agent的策略执行时间计数器-1，相当于执行1 step"""
+    for agent in agent_list:
+        agent_list[agent].time_count_step()
+
+
+def get_reward(agent):
+    """获取奖励"""
+    reward_config = agent.reward_config
+    reward_name = reward_config['names']  # 奖励只有一个
+    func_name = reward_config['func_names'][reward_name]
+    paras = reward_config['paras'][reward_name]
+    #
+    val = eval(func_name)(paras)
+    agent.save_reward(val)
+
+
+def memorize(agent, done=False):
+    """保存<s,a,r,s'>到经验池"""
+    agent.memorize(done=done)
+
+
+def experience_replay(agent_list):
+    """经验回放"""
+    for agent in agent_list:
+        agent_list[agent].experience_replay()
+
+
+def save_sumo_output_data(ep):
+    """保存SUMO仿真输出数据"""
+    sumo_dir = os.path.join(os.getcwd(), 'sumo_network')  # sumo仿真文件夹
+    default_output_dir = os.path.join(sumo_dir, 'output')  # 仿真输出数据，默认文件夹
+    dir_name = f"output_data({ep})"  # 输出数据文件夹：output_data(99)
+    new_output_dir = os.path.join(sumo_dir, dir_name)  # 含路径
+
+    if os.path.exists(new_output_dir) == True:  # 如果存在，则清空所有文件
+        shutil.rmtree(new_output_dir)  # 删除文件及文件夹
+    else:
+        pass
+    #
+    shutil.copytree(default_output_dir, new_output_dir)  # 复制文件夹
