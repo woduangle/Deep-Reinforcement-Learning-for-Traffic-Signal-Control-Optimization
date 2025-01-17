@@ -1,0 +1,16 @@
+import sys
+import os
+import time
+import save_data.save_data as sd
+import shutil
+
+from utils.process_control_Nash_QL import *
+os.chdir(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))  # 设置工作目录
+
+'''
+读取Yaml文件数据
+'''
+yaml_data = read_yaml('yaml_config/_config_Nash_QL.yaml')
+basic_setting = yaml_data[0]['BASIC_SETTING']  # 基本参数
+rl_setting = yaml_data[0]['PARAMETER_SETTING']  # 超参数
+agent_setting = yaml_data[0]['AGENT_ELEMENT_SETTING']  # Agent参数

@@ -1,0 +1,21 @@
+Loading net-file from 'C:\school\study\DRL2.0-2024\2024\NASH-QL\sumo_network\example42.net.xml' ... done (57ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\NASH-QL\sumo_network\busstops_def.add.xml' ... done (41ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\NASH-QL\sumo_network\det_e3.add.xml' ... done (20ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\NASH-QL\sumo_network\det_e2.add.xml' ... 
+done (15ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\NASH-QL\sumo_network\edgelane_dump.add.xml' ... done (13ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\NASH-QL\sumo_network\signal-timing-dial.xml' ... done (28ms).
+Loading done.
+Simulation ended at time: 0.00
+Performance: 
+ Duration: 770.48s
+ Real time factor: 0
+ UPS: 0.000000
+Vehicles: 
+ Inserted: 0 (Loaded: 11)
+ Running: 0
+ Waiting: 0
+Persons: 
+ Inserted: 590
+ Running: 0
+
