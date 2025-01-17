@@ -1,0 +1,281 @@
+<additional>
+ <entryExitDetector id="e3_det" freq="120" file="output/data_e3.xml">
+     <detEntry lane="E0_0" pos="50"/>
+     <detEntry lane="E0_1" pos="50"/>
+     <detEntry lane="E0_2" pos="50"/>
+     <detEntry lane="E0_3" pos="50"/>
+     <detEntry lane="-E11_0" pos="50"/>
+     <detEntry lane="-E11_1" pos="50"/>
+     <detEntry lane="-E11_2" pos="50"/>
+     <detEntry lane="-E13_0" pos="50"/>
+     <detEntry lane="-E13_1" pos="50"/>
+     <detEntry lane="-E13_2" pos="50"/>
+     <detEntry lane="-E13_3" pos="50"/>
+     <detEntry lane="-E15_0" pos="50"/>
+     <detEntry lane="-E15_1" pos="50"/>
+     <detEntry lane="-E15_2" pos="50"/>
+     <detEntry lane="-E8_0" pos="50"/>
+     <detEntry lane="-E8_1" pos="50"/>
+     <detEntry lane="-E8_2" pos="50"/>
+     <detEntry lane="-E8_3" pos="50"/>
+     <detEntry lane="-E9_0" pos="50"/>
+     <detEntry lane="-E9_1" pos="50"/>
+     <detEntry lane="-E9_2" pos="50"/>
+     <detEntry lane="-E6_0" pos="50"/>
+     <detEntry lane="-E6_1" pos="50"/>
+     <detEntry lane="-E6_2" pos="50"/>
+     <detEntry lane="-E6_3" pos="50"/>
+     <detEntry lane="-E3_0" pos="50"/>
+     <detEntry lane="-E3_1" pos="50"/>
+     <detEntry lane="-E3_2" pos="50"/>
+	 <detEntry lane="-E19_0" pos="50"/>
+     <detEntry lane="-E19_1" pos="50"/>
+     <detEntry lane="-E19_2" pos="50"/>
+     <detEntry lane="-E19_3" pos="50"/>
+	 <detEntry lane="E16_0" pos="50"/>
+     <detEntry lane="E16_1" pos="50"/>
+     <detEntry lane="E16_2" pos="50"/>
+     <detEntry lane="E16_3" pos="50"/>
+	 
+
+     <detExit lane="-E0_0" pos="50"/>
+     <detExit lane="-E0_1" pos="50"/>
+     <detExit lane="-E0_2" pos="50"/>
+     <detExit lane="-E0_3" pos="50"/>
+     <detExit lane="E11_0" pos="50"/>
+     <detExit lane="E11_1" pos="50"/>
+     <detExit lane="E11_2" pos="50"/>
+     <detExit lane="E13_0" pos="50"/>
+     <detExit lane="E13_1" pos="50"/>
+     <detExit lane="E13_2" pos="50"/>
+     <detExit lane="E13_3" pos="50"/>
+     <detExit lane="E15_0" pos="50"/>
+     <detExit lane="E15_1" pos="50"/>
+     <detExit lane="E15_2" pos="50"/>
+     <detExit lane="E8_0" pos="50"/>
+     <detExit lane="E8_1" pos="50"/>
+     <detExit lane="E8_2" pos="50"/>
+     <detExit lane="E8_3" pos="50"/>
+     <detExit lane="E9_0" pos="50"/>
+     <detExit lane="E9_1" pos="50"/>
+     <detExit lane="E9_2" pos="50"/>
+     <detExit lane="E6_0" pos="50"/>
+     <detExit lane="E6_1" pos="50"/>
+     <detExit lane="E6_2" pos="50"/>
+     <detExit lane="E6_3" pos="50"/>
+     <detExit lane="E3_0" pos="50"/>
+     <detExit lane="E3_1" pos="50"/>
+     <detExit lane="E3_2" pos="50"/>
+	 <detExit lane="-E16_0" pos="50"/>
+     <detExit lane="-E16_1" pos="50"/>
+     <detExit lane="-E16_2" pos="50"/>
+     <detExit lane="-E16_3" pos="50"/>
+	 <detExit lane="E19_0" pos="50"/>
+     <detExit lane="E19_1" pos="50"/>
+     <detExit lane="E19_2" pos="50"/>
+	 <detExit lane="E19_3" pos="50"/>
+  </entryExitDetector>
+
+  <entryExitDetector id="LEFT_e3_det" freq="120" file="output/data_e3.xml">
+     <detEntry lane="E0_0" pos="50"/>
+     <detEntry lane="E0_1" pos="50"/>
+     <detEntry lane="E0_2" pos="50"/>
+     <detEntry lane="E0_3" pos="50"/>
+     <detEntry lane="-E1_0" pos="50"/>
+     <detEntry lane="-E1_1" pos="50"/>
+     <detEntry lane="-E1_2" pos="50"/>     
+     <detEntry lane="-E3_0" pos="50"/>
+     <detEntry lane="-E3_1" pos="50"/>
+     <detEntry lane="-E3_2" pos="50"/>
+     <detEntry lane="-E2_0" pos="50"/>
+     <detEntry lane="-E2_1" pos="50"/>
+     <detEntry lane="-E2_2" pos="50"/>
+     <detEntry lane="-E2_3" pos="50"/>
+
+     <detExit lane="-E0_0" pos="50"/>
+     <detExit lane="-E0_1" pos="50"/>
+     <detExit lane="-E0_2" pos="50"/>
+     <detExit lane="-E0_3" pos="50"/>
+     <detExit lane="E1_0" pos="50"/>
+     <detExit lane="E1_1" pos="50"/>
+     <detExit lane="E1_2" pos="50"/>     
+     <detExit lane="E3_0" pos="50"/>
+     <detExit lane="E3_1" pos="50"/>
+     <detExit lane="E3_2" pos="50"/>
+     <detExit lane="E2_0" pos="50"/>
+     <detExit lane="E2_1" pos="50"/>
+     <detExit lane="E2_2" pos="50"/>
+     <detExit lane="E2_3" pos="50"/>
+  </entryExitDetector>
+
+   <entryExitDetector id="MID_e3_det" freq="120" file="output/data_e3.xml">
+
+     <detEntry lane="E2_0" pos="50"/>
+     <detEntry lane="E2_1" pos="50"/>
+     <detEntry lane="E2_2" pos="50"/>
+     <detEntry lane="E2_3" pos="50"/>
+	 <detEntry lane="-E4_0" pos="50"/>
+     <detEntry lane="-E4_1" pos="50"/>
+     <detEntry lane="-E4_2" pos="50"/>
+     <detEntry lane="-E4_3" pos="50"/>
+     <detEntry lane="-E5_0" pos="50"/>
+     <detEntry lane="-E5_1" pos="50"/>
+     <detEntry lane="-E5_2" pos="50"/>
+     <detEntry lane="-E5_3" pos="50"/>
+     <detEntry lane="-E6_0" pos="50"/>
+     <detEntry lane="-E6_1" pos="50"/>
+     <detEntry lane="-E6_2" pos="50"/>
+     <detEntry lane="-E6_3" pos="50"/>
+
+     <detExit lane="-E2_0" pos="50"/>
+     <detExit lane="-E2_1" pos="50"/>
+     <detExit lane="-E2_2" pos="50"/>
+     <detExit lane="-E2_3" pos="50"/>
+     <detExit lane="E4_0" pos="50"/>
+     <detExit lane="E4_1" pos="50"/>
+     <detExit lane="E4_2" pos="50"/>
+     <detExit lane="E4_3" pos="50"/>
+     <detExit lane="E5_0" pos="50"/>
+     <detExit lane="E5_1" pos="50"/>
+     <detExit lane="E5_2" pos="50"/>
+     <detExit lane="E5_3" pos="50"/>
+     <detExit lane="E6_0" pos="50"/>
+     <detExit lane="E6_1" pos="50"/>
+     <detExit lane="E6_2" pos="50"/>
+     <detExit lane="E6_3" pos="50"/>
+  </entryExitDetector>
+
+   <entryExitDetector id="RIGHT_e3_det" freq="120" file="output/data_e3.xml">
+     <detEntry lane="E5_0" pos="50"/>
+     <detEntry lane="E5_1" pos="50"/>
+     <detEntry lane="E5_2" pos="50"/>
+     <detEntry lane="E5_3" pos="50"/>
+     <detEntry lane="-E7_0" pos="50"/>
+     <detEntry lane="-E7_1" pos="50"/>
+     <detEntry lane="-E7_2" pos="50"/>
+     <detEntry lane="-E8_0" pos="50"/>
+     <detEntry lane="-E8_1" pos="50"/>
+     <detEntry lane="-E8_2" pos="50"/>
+     <detEntry lane="-E8_3" pos="50"/>
+     <detEntry lane="-E9_0" pos="50"/>
+     <detEntry lane="-E9_1" pos="50"/>
+     <detEntry lane="-E9_2" pos="50"/>
+
+     <detExit lane="-E5_0" pos="50"/>
+     <detExit lane="-E5_1" pos="50"/>
+     <detExit lane="-E5_2" pos="50"/>
+     <detExit lane="-E5_3" pos="50"/>
+     <detExit lane="E7_0" pos="50"/>
+     <detExit lane="E7_1" pos="50"/>
+     <detExit lane="E7_2" pos="50"/>
+     <detExit lane="E8_0" pos="50"/>
+     <detExit lane="E8_1" pos="50"/>
+     <detExit lane="E8_2" pos="50"/>
+     <detExit lane="E8_3" pos="50"/>
+     <detExit lane="E9_0" pos="50"/>
+     <detExit lane="E9_1" pos="50"/>
+     <detExit lane="E9_2" pos="50"/>
+  </entryExitDetector>
+
+  <entryExitDetector id="LEFT_second_e3_det" freq="120" file="output/data_e3.xml">
+     <detEntry lane="E16_0" pos="50"/>
+     <detEntry lane="E16_1" pos="50"/>
+     <detEntry lane="E16_2" pos="50"/>
+     <detEntry lane="E16_3" pos="50"/>
+     <detEntry lane="-E11_0" pos="50"/>
+     <detEntry lane="-E11_1" pos="50"/>
+     <detEntry lane="-E11_2" pos="50"/>     
+     <detEntry lane="-E10_0" pos="50"/>
+     <detEntry lane="-E10_1" pos="50"/>
+     <detEntry lane="-E10_2" pos="50"/>
+     <detEntry lane="-E17_0" pos="50"/>
+     <detEntry lane="-E17_1" pos="50"/>
+     <detEntry lane="-E17_2" pos="50"/>
+     <detEntry lane="-E17_3" pos="50"/>
+
+     <detExit lane="-E16_0" pos="50"/>
+     <detExit lane="-E16_1" pos="50"/>
+     <detExit lane="-E16_2" pos="50"/>
+     <detExit lane="-E16_3" pos="50"/>
+     <detExit lane="E11_0" pos="50"/>
+     <detExit lane="E11_1" pos="50"/>
+     <detExit lane="E11_2" pos="50"/>     
+     <detExit lane="E10_0" pos="50"/>
+     <detExit lane="E10_1" pos="50"/>
+     <detExit lane="E10_2" pos="50"/>
+     <detExit lane="E17_0" pos="50"/>
+     <detExit lane="E17_1" pos="50"/>
+     <detExit lane="E17_2" pos="50"/>
+     <detExit lane="E17_3" pos="50"/>
+  </entryExitDetector>
+
+  <entryExitDetector id="MID_second_e3_det" freq="120" file="output/data_e3.xml">
+
+     <detEntry lane="E17_0" pos="50"/>
+     <detEntry lane="E17_1" pos="50"/>
+     <detEntry lane="E17_2" pos="50"/>
+     <detEntry lane="E17_3" pos="50"/>
+	 <detEntry lane="-E13_0" pos="50"/>
+     <detEntry lane="-E13_1" pos="50"/>
+     <detEntry lane="-E13_2" pos="50"/>
+     <detEntry lane="-E13_3" pos="50"/>
+     <detEntry lane="-E18_0" pos="50"/>
+     <detEntry lane="-E18_1" pos="50"/>
+     <detEntry lane="-E18_2" pos="50"/>
+     <detEntry lane="-E18_3" pos="50"/>
+     <detEntry lane="-E12_0" pos="50"/>
+     <detEntry lane="-E12_1" pos="50"/>
+     <detEntry lane="-E12_2" pos="50"/>
+     <detEntry lane="-E12_3" pos="50"/>
+
+     <detExit lane="-E17_0" pos="50"/>
+     <detExit lane="-E17_1" pos="50"/>
+     <detExit lane="-E17_2" pos="50"/>
+     <detExit lane="-E17_3" pos="50"/>
+     <detExit lane="E13_0" pos="50"/>
+     <detExit lane="E13_1" pos="50"/>
+     <detExit lane="E13_2" pos="50"/>
+     <detExit lane="E13_3" pos="50"/>
+     <detExit lane="E18_0" pos="50"/>
+     <detExit lane="E18_1" pos="50"/>
+     <detExit lane="E18_2" pos="50"/>
+     <detExit lane="E18_3" pos="50"/>
+     <detExit lane="E12_0" pos="50"/>
+     <detExit lane="E12_1" pos="50"/>
+     <detExit lane="E12_2" pos="50"/>
+     <detExit lane="E12_3" pos="50"/>
+  </entryExitDetector>
+
+  <entryExitDetector id="RIGHT_second_e3_det" freq="120" file="output/data_e3.xml">
+     <detEntry lane="E18_0" pos="50"/>
+     <detEntry lane="E18_1" pos="50"/>
+     <detEntry lane="E18_2" pos="50"/>
+     <detEntry lane="E18_3" pos="50"/>
+     <detEntry lane="-E15_0" pos="50"/>
+     <detEntry lane="-E15_1" pos="50"/>
+     <detEntry lane="-E15_2" pos="50"/>
+     <detEntry lane="-E19_0" pos="50"/>
+     <detEntry lane="-E19_1" pos="50"/>
+     <detEntry lane="-E19_2" pos="50"/>
+     <detEntry lane="-E19_3" pos="50"/>
+     <detEntry lane="-E14_0" pos="50"/>
+     <detEntry lane="-E14_1" pos="50"/>
+     <detEntry lane="-E14_2" pos="50"/>
+
+     <detExit lane="-E18_0" pos="50"/>
+     <detExit lane="-E18_1" pos="50"/>
+     <detExit lane="-E18_2" pos="50"/>
+     <detExit lane="-E18_3" pos="50"/>
+     <detExit lane="E15_0" pos="50"/>
+     <detExit lane="E15_1" pos="50"/>
+     <detExit lane="E15_2" pos="50"/>
+     <detExit lane="E19_0" pos="50"/>
+     <detExit lane="E19_1" pos="50"/>
+     <detExit lane="E19_2" pos="50"/>
+     <detExit lane="E19_3" pos="50"/>
+     <detExit lane="E14_0" pos="50"/>
+     <detExit lane="E14_1" pos="50"/>
+     <detExit lane="E14_2" pos="50"/>
+  </entryExitDetector>
+
+</additional>

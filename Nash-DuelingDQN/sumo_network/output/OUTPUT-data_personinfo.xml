@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-04-12 11:10:06 by Eclipse SUMO sumo Version 1.19.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="sumo_network/example42.net.xml"/>
+        <route-files value="sumo_network/example42.rou.xml,sumo_network/bus.rou.xml,sumo_network/pedestrian.rou.xml"/>
+        <additional-files value="sumo_network/busstops_def.add.xml,sumo_network/det_e3.add.xml,sumo_network/det_e2.add.xml,sumo_network/edgelane_dump.add.xml,sumo_network/signal-timing-dial.xml"/>
+    </input>
+
+    <output>
+        <write-license value="false"/>
+        <output-prefix value="OUTPUT-"/>
+        <precision value="2"/>
+        <human-readable-time value="false"/>
+        <emission-output value="sumo_network/output/data_emission.xml"/>
+        <emission-output.precision value="2"/>
+        <queue-output value="sumo_network/output/data_Queue.xml"/>
+        <queue-output.period value="300"/>
+        <summary-output value="sumo_network/output/data_summary.xml"/>
+        <summary-output.period value="300"/>
+        <person-summary-output value="sumo_network/output/data_person_summary.xml"/>
+        <personinfo-output value="sumo_network/output/data_personinfo.xml"/>
+        <collision-output value="sumo_network/output/data_collision.xml"/>
+        <edgedata-output value="sumo_network/output/data_edges.xml"/>
+        <lanedata-output value="sumo_network/output/data_lanes.xml"/>
+        <statistic-output value="sumo_network/output/data_statistic.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="1"/>
+    </time>
+
+    <processing>
+        <no-internal-links value="false"/>
+        <ignore-route-errors value="true"/>
+        <collision.action value="teleport"/>
+        <intermodal-collision.action value="warn"/>
+        <collision.stoptime value="0"/>
+        <intermodal-collision.stoptime value="0"/>
+        <collision.check-junctions value="false"/>
+        <max-num-vehicles value="-1"/>
+        <max-num-teleports value="-1"/>
+        <time-to-teleport value="300"/>
+        <time-to-teleport.remove value="false"/>
+        <waiting-time-memory value="100"/>
+        <max-depart-delay value="-1"/>
+        <random-depart-offset value="0"/>
+        <lanechange.duration value="0"/>
+        <lanechange.overtake-right value="false"/>
+        <tls.all-off value="false"/>
+        <tls.yellow.min-decel value="3"/>
+    </processing>
+
+    <routing>
+        <routing-algorithm value="dijkstra"/>
+    </routing>
+
+    <report>
+        <verbose value="true"/>
+        <no-warnings value="true"/>
+        <log value="sumo_network/output/data_log.xml"/>
+        <no-step-log value="true"/>
+        <step-log.period value="300"/>
+    </report>
+
+    <emissions>
+        <device.emissions.period value="300"/>
+    </emissions>
+
+    <traci_server>
+        <remote-port value="8813"/>
+    </traci_server>
+
+    <mesoscopic>
+        <mesosim value="false"/>
+    </mesoscopic>
+
+    <random_number>
+        <random value="false"/>
+        <seed value="23423"/>
+    </random_number>
+
+    <gui_only>
+        <gui-settings-file value="sumo_network/viewsettings.xml"/>
+        <start value="true"/>
+        <demo value="false"/>
+        <window-size value="800,600"/>
+        <window-pos value="100,100"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+    <personinfo id="walk4.0" depart="0.00" type="vt_p" speedFactor="0.86">
+        <walk depart="0.00" departPos="0.00" arrival="89.00" arrivalPos="77.60" duration="89.00" routeLength="306.74" timeLoss="27.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.1" depart="45.00" type="vt_p" speedFactor="1.11">
+        <walk depart="45.00" departPos="0.00" arrival="114.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.3" depart="135.00" type="vt_p" speedFactor="0.94">
+        <walk depart="135.00" departPos="0.00" arrival="224.00" arrivalPos="77.60" duration="89.00" routeLength="306.74" timeLoss="27.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.2" depart="90.00" type="vt_p" speedFactor="0.96">
+        <walk depart="90.00" departPos="0.00" arrival="226.00" arrivalPos="77.60" duration="136.00" routeLength="306.74" timeLoss="74.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.4" depart="180.00" type="vt_p" speedFactor="0.89">
+        <walk depart="180.00" departPos="0.00" arrival="250.00" arrivalPos="77.60" duration="70.00" routeLength="306.74" timeLoss="8.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.2" depart="90.00" type="DEFAULT_PEDTYPE" speedFactor="1.04">
+        <walk depart="90.00" departPos="0.00" arrival="333.00" arrivalPos="88.97" duration="243.00" routeLength="315.13" timeLoss="24.68" maxSpeed="1.44"/>
+    </personinfo>
+    <personinfo id="walk3.0" depart="0.00" type="DEFAULT_PEDTYPE" speedFactor="1.06">
+        <walk depart="0.00" departPos="0.00" arrival="333.00" arrivalPos="88.97" duration="333.00" routeLength="315.13" timeLoss="119.75" maxSpeed="1.48"/>
+    </personinfo>
+    <personinfo id="walk4.5" depart="225.00" type="vt_p" speedFactor="0.93">
+        <walk depart="225.00" departPos="0.00" arrival="338.00" arrivalPos="77.60" duration="113.00" routeLength="306.74" timeLoss="51.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.6" depart="270.00" type="vt_p" speedFactor="1.06">
+        <walk depart="270.00" departPos="0.00" arrival="340.00" arrivalPos="77.60" duration="70.00" routeLength="306.74" timeLoss="8.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.1" depart="45.00" type="DEFAULT_PEDTYPE" speedFactor="0.88">
+        <walk depart="45.00" departPos="0.00" arrival="346.00" arrivalPos="88.97" duration="301.00" routeLength="315.13" timeLoss="43.78" maxSpeed="1.23"/>
+    </personinfo>
+    <personinfo id="walk3.3" depart="135.00" type="DEFAULT_PEDTYPE" speedFactor="1.17">
+        <walk depart="135.00" departPos="0.00" arrival="399.00" arrivalPos="88.97" duration="264.00" routeLength="315.13" timeLoss="69.66" maxSpeed="1.62"/>
+    </personinfo>
+    <personinfo id="walk4.7" depart="315.00" type="vt_p" speedFactor="0.94">
+        <walk depart="315.00" departPos="0.00" arrival="426.00" arrivalPos="77.60" duration="111.00" routeLength="306.74" timeLoss="49.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.8" depart="360.00" type="vt_p" speedFactor="1.18">
+        <walk depart="360.00" departPos="0.00" arrival="430.00" arrivalPos="77.60" duration="70.00" routeLength="306.74" timeLoss="8.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.4" depart="180.00" type="DEFAULT_PEDTYPE" speedFactor="0.93">
+        <walk depart="180.00" departPos="0.00" arrival="452.00" arrivalPos="88.97" duration="272.00" routeLength="315.13" timeLoss="27.50" maxSpeed="1.29"/>
+    </personinfo>
+    <personinfo id="walk4.9" depart="405.00" type="vt_p" speedFactor="0.97">
+        <walk depart="405.00" departPos="0.00" arrival="514.00" arrivalPos="77.60" duration="109.00" routeLength="306.74" timeLoss="47.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.5" depart="225.00" type="DEFAULT_PEDTYPE" speedFactor="0.89">
+        <walk depart="225.00" departPos="0.00" arrival="514.00" arrivalPos="88.97" duration="289.00" routeLength="315.13" timeLoss="35.34" maxSpeed="1.24"/>
+    </personinfo>
+    <personinfo id="walk2.0" depart="0.00" type="DEFAULT_PEDTYPE" speedFactor="1.06">
+        <walk depart="0.00" departPos="0.00" arrival="516.00" arrivalPos="111.70" duration="516.00" routeLength="683.33" timeLoss="52.51" maxSpeed="1.47"/>
+    </personinfo>
+    <personinfo id="walk4.10" depart="450.00" type="vt_p" speedFactor="1.11">
+        <walk depart="450.00" departPos="0.00" arrival="518.00" arrivalPos="77.60" duration="68.00" routeLength="306.74" timeLoss="6.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.6" depart="270.00" type="DEFAULT_PEDTYPE" speedFactor="0.93">
+        <walk depart="270.00" departPos="0.00" arrival="549.00" arrivalPos="88.97" duration="279.00" routeLength="315.13" timeLoss="34.37" maxSpeed="1.29"/>
+    </personinfo>
+    <personinfo id="walk3.8" depart="360.00" type="DEFAULT_PEDTYPE" speedFactor="1.24">
+        <walk depart="360.00" departPos="0.00" arrival="569.00" arrivalPos="88.97" duration="209.00" routeLength="315.13" timeLoss="25.68" maxSpeed="1.72"/>
+    </personinfo>
+    <personinfo id="walk3.7" depart="315.00" type="DEFAULT_PEDTYPE" speedFactor="1.11">
+        <walk depart="315.00" departPos="0.00" arrival="580.00" arrivalPos="88.97" duration="265.00" routeLength="315.13" timeLoss="60.11" maxSpeed="1.54"/>
+    </personinfo>
+    <personinfo id="walk4.11" depart="495.00" type="vt_p" speedFactor="0.83">
+        <walk depart="495.00" departPos="0.00" arrival="603.00" arrivalPos="77.60" duration="108.00" routeLength="306.74" timeLoss="46.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.12" depart="540.00" type="vt_p" speedFactor="0.87">
+        <walk depart="540.00" departPos="0.00" arrival="609.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk2.1" depart="120.00" type="DEFAULT_PEDTYPE" speedFactor="1.03">
+        <walk depart="120.00" departPos="0.00" arrival="651.00" arrivalPos="111.70" duration="531.00" routeLength="683.33" timeLoss="53.98" maxSpeed="1.43"/>
+    </personinfo>
+    <personinfo id="walk3.9" depart="405.00" type="DEFAULT_PEDTYPE" speedFactor="0.96">
+        <walk depart="405.00" departPos="0.00" arrival="680.00" arrivalPos="88.97" duration="275.00" routeLength="315.13" timeLoss="38.08" maxSpeed="1.33"/>
+    </personinfo>
+    <personinfo id="walk4.13" depart="585.00" type="vt_p" speedFactor="0.93">
+        <walk depart="585.00" departPos="0.00" arrival="691.00" arrivalPos="77.60" duration="106.00" routeLength="306.74" timeLoss="44.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.14" depart="630.00" type="vt_p" speedFactor="0.94">
+        <walk depart="630.00" departPos="0.00" arrival="698.00" arrivalPos="77.60" duration="68.00" routeLength="306.74" timeLoss="6.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.10" depart="450.00" type="DEFAULT_PEDTYPE" speedFactor="0.97">
+        <walk depart="450.00" departPos="0.00" arrival="710.00" arrivalPos="88.97" duration="260.00" routeLength="315.13" timeLoss="26.02" maxSpeed="1.35"/>
+    </personinfo>
+    <personinfo id="walk2.2" depart="240.00" type="DEFAULT_PEDTYPE" speedFactor="1.11">
+        <walk depart="240.00" departPos="0.00" arrival="729.00" arrivalPos="111.70" duration="489.00" routeLength="683.33" timeLoss="46.75" maxSpeed="1.55"/>
+    </personinfo>
+    <personinfo id="walk3.12" depart="540.00" type="DEFAULT_PEDTYPE" speedFactor="1.20">
+        <walk depart="540.00" departPos="0.00" arrival="753.00" arrivalPos="88.97" duration="213.00" routeLength="315.13" timeLoss="23.84" maxSpeed="1.67"/>
+    </personinfo>
+    <personinfo id="walk3.11" depart="495.00" type="DEFAULT_PEDTYPE" speedFactor="1.02">
+        <walk depart="495.00" departPos="0.00" arrival="764.00" arrivalPos="88.97" duration="269.00" routeLength="315.13" timeLoss="45.68" maxSpeed="1.41"/>
+    </personinfo>
+    <personinfo id="walk4.15" depart="675.00" type="vt_p" speedFactor="1.00">
+        <walk depart="675.00" departPos="0.00" arrival="779.00" arrivalPos="77.60" duration="104.00" routeLength="306.74" timeLoss="42.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.16" depart="720.00" type="vt_p" speedFactor="1.04">
+        <walk depart="720.00" departPos="0.00" arrival="788.00" arrivalPos="77.60" duration="68.00" routeLength="306.74" timeLoss="6.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.14" depart="630.00" type="DEFAULT_PEDTYPE" speedFactor="1.12">
+        <walk depart="630.00" departPos="0.00" arrival="855.00" arrivalPos="88.97" duration="225.00" routeLength="315.13" timeLoss="22.58" maxSpeed="1.56"/>
+    </personinfo>
+    <personinfo id="walk4.17" depart="765.00" type="vt_p" speedFactor="0.94">
+        <walk depart="765.00" departPos="0.00" arrival="866.00" arrivalPos="77.60" duration="101.00" routeLength="306.74" timeLoss="39.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.13" depart="585.00" type="DEFAULT_PEDTYPE" speedFactor="0.88">
+        <walk depart="585.00" departPos="0.00" arrival="874.00" arrivalPos="88.97" duration="289.00" routeLength="315.13" timeLoss="29.90" maxSpeed="1.22"/>
+    </personinfo>
+    <personinfo id="walk4.18" depart="810.00" type="vt_p" speedFactor="0.95">
+        <walk depart="810.00" departPos="0.00" arrival="879.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.15" depart="675.00" type="DEFAULT_PEDTYPE" speedFactor="1.07">
+        <walk depart="675.00" departPos="0.00" arrival="935.00" arrivalPos="88.97" duration="260.00" routeLength="315.13" timeLoss="47.35" maxSpeed="1.48"/>
+    </personinfo>
+    <personinfo id="walk2.3" depart="360.00" type="DEFAULT_PEDTYPE" speedFactor="0.93">
+        <walk depart="360.00" departPos="0.00" arrival="950.00" arrivalPos="111.70" duration="590.00" routeLength="683.33" timeLoss="61.03" maxSpeed="1.29"/>
+    </personinfo>
+    <personinfo id="walk4.19" depart="855.00" type="vt_p" speedFactor="0.92">
+        <walk depart="855.00" departPos="0.00" arrival="954.00" arrivalPos="77.60" duration="99.00" routeLength="306.74" timeLoss="37.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.20" depart="900.00" type="vt_p" speedFactor="0.96">
+        <walk depart="900.00" departPos="0.00" arrival="969.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk2.4" depart="480.00" type="DEFAULT_PEDTYPE" speedFactor="1.08">
+        <walk depart="480.00" departPos="0.00" arrival="986.00" arrivalPos="111.70" duration="506.00" routeLength="683.33" timeLoss="50.70" maxSpeed="1.50"/>
+    </personinfo>
+    <personinfo id="walk2.5" depart="600.00" type="DEFAULT_PEDTYPE" speedFactor="1.37">
+        <walk depart="600.00" departPos="0.00" arrival="997.00" arrivalPos="111.70" duration="397.00" routeLength="683.33" timeLoss="37.35" maxSpeed="1.90"/>
+    </personinfo>
+    <personinfo id="walk3.17" depart="765.00" type="DEFAULT_PEDTYPE" speedFactor="0.98">
+        <walk depart="765.00" departPos="0.00" arrival="1031.00" arrivalPos="88.97" duration="266.00" routeLength="315.13" timeLoss="33.31" maxSpeed="1.35"/>
+    </personinfo>
+    <personinfo id="walk1.0" depart="0.00" type="DEFAULT_PEDTYPE" speedFactor="0.92">
+        <walk depart="0.00" departPos="0.00" arrival="1033.00" arrivalPos="101.14" duration="1033.00" routeLength="1136.05" timeLoss="146.61" maxSpeed="1.28"/>
+    </personinfo>
+    <personinfo id="walk3.16" depart="720.00" type="DEFAULT_PEDTYPE" speedFactor="0.89">
+        <walk depart="720.00" departPos="0.00" arrival="1042.00" arrivalPos="88.97" duration="322.00" routeLength="315.13" timeLoss="66.86" maxSpeed="1.24"/>
+    </personinfo>
+    <personinfo id="walk4.21" depart="945.00" type="vt_p" speedFactor="1.07">
+        <walk depart="945.00" departPos="0.00" arrival="1043.00" arrivalPos="77.60" duration="98.00" routeLength="306.74" timeLoss="36.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.22" depart="990.00" type="vt_p" speedFactor="1.17">
+        <walk depart="990.00" departPos="0.00" arrival="1059.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.18" depart="810.00" type="DEFAULT_PEDTYPE" speedFactor="0.99">
+        <walk depart="810.00" departPos="0.00" arrival="1068.00" arrivalPos="88.97" duration="258.00" routeLength="315.13" timeLoss="27.81" maxSpeed="1.37"/>
+    </personinfo>
+    <personinfo id="walk1.1" depart="120.00" type="DEFAULT_PEDTYPE" speedFactor="0.96">
+        <walk depart="120.00" departPos="0.00" arrival="1104.00" arrivalPos="101.14" duration="984.00" routeLength="1136.05" timeLoss="134.17" maxSpeed="1.34"/>
+    </personinfo>
+    <personinfo id="bus2.0" depart="0.00" type="DEFAULT_PEDTYPE" speedFactor="1.26">
+        <walk depart="0.00" departPos="0.00" arrival="134.00" arrivalPos="208.50" duration="134.00" routeLength="208.50" timeLoss="14.78" maxSpeed="1.75"/>
+        <ride waitingTime="558.00" vehicle="w2e_106.1" depart="692.00" arrival="1039.00" arrivalPos="160.00" duration="347.00" routeLength="1146.16" timeLoss="159.66"/>
+        <walk depart="1039.00" departPos="160.00" arrival="1127.00" arrivalPos="297.70" duration="88.00" routeLength="137.70" timeLoss="9.26" maxSpeed="1.75"/>
+    </personinfo>
+    <personinfo id="walk4.23" depart="1035.00" type="vt_p" speedFactor="0.85">
+        <walk depart="1035.00" departPos="0.00" arrival="1130.00" arrivalPos="77.60" duration="95.00" routeLength="306.74" timeLoss="33.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="bus2.1" depart="360.00" type="DEFAULT_PEDTYPE" speedFactor="1.07">
+        <walk depart="360.00" departPos="0.00" arrival="517.00" arrivalPos="208.50" duration="157.00" routeLength="208.50" timeLoss="16.06" maxSpeed="1.48"/>
+        <ride waitingTime="175.00" vehicle="w2e_106.1" depart="692.00" arrival="1039.00" arrivalPos="160.00" duration="347.00" routeLength="1146.11" timeLoss="159.66"/>
+        <walk depart="1039.00" departPos="160.00" arrival="1144.00" arrivalPos="297.70" duration="105.00" routeLength="137.70" timeLoss="11.91" maxSpeed="1.48"/>
+    </personinfo>
+    <personinfo id="walk3.19" depart="855.00" type="DEFAULT_PEDTYPE" speedFactor="0.86">
+        <walk depart="855.00" departPos="0.00" arrival="1147.00" arrivalPos="88.97" duration="292.00" routeLength="315.13" timeLoss="29.02" maxSpeed="1.20"/>
+    </personinfo>
+    <personinfo id="walk4.24" depart="1080.00" type="vt_p" speedFactor="1.04">
+        <walk depart="1080.00" departPos="0.00" arrival="1149.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk2.6" depart="720.00" type="DEFAULT_PEDTYPE" speedFactor="1.14">
+        <walk depart="720.00" departPos="0.00" arrival="1195.00" arrivalPos="111.70" duration="475.00" routeLength="683.33" timeLoss="45.23" maxSpeed="1.59"/>
+    </personinfo>
+    <personinfo id="walk3.21" depart="945.00" type="DEFAULT_PEDTYPE" speedFactor="1.08">
+        <walk depart="945.00" departPos="0.00" arrival="1196.00" arrivalPos="88.97" duration="251.00" routeLength="315.13" timeLoss="40.42" maxSpeed="1.50"/>
+    </personinfo>
+    <personinfo id="walk3.20" depart="900.00" type="DEFAULT_PEDTYPE" speedFactor="0.89">
+        <walk depart="900.00" departPos="0.00" arrival="1217.00" arrivalPos="88.97" duration="317.00" routeLength="315.13" timeLoss="61.37" maxSpeed="1.23"/>
+    </personinfo>
+    <personinfo id="walk3.22" depart="990.00" type="DEFAULT_PEDTYPE" speedFactor="1.11">
+        <walk depart="990.00" departPos="0.00" arrival="1217.00" arrivalPos="88.97" duration="227.00" routeLength="315.13" timeLoss="22.37" maxSpeed="1.54"/>
+    </personinfo>
+    <personinfo id="walk4.25" depart="1125.00" type="vt_p" speedFactor="0.92">
+        <walk depart="1125.00" departPos="0.00" arrival="1218.00" arrivalPos="77.60" duration="93.00" routeLength="306.74" timeLoss="31.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.26" depart="1170.00" type="vt_p" speedFactor="1.09">
+        <walk depart="1170.00" departPos="0.00" arrival="1239.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk1.2" depart="240.00" type="DEFAULT_PEDTYPE" speedFactor="0.90">
+        <walk depart="240.00" departPos="0.00" arrival="1290.00" arrivalPos="101.14" duration="1050.00" routeLength="1128.71" timeLoss="147.53" maxSpeed="1.25"/>
+    </personinfo>
+    <personinfo id="walk4.27" depart="1215.00" type="vt_p" speedFactor="1.11">
+        <walk depart="1215.00" departPos="0.00" arrival="1308.00" arrivalPos="77.60" duration="93.00" routeLength="306.74" timeLoss="31.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk4.28" depart="1260.00" type="vt_p" speedFactor="1.03">
+        <walk depart="1260.00" departPos="0.00" arrival="1330.00" arrivalPos="77.60" duration="70.00" routeLength="306.74" timeLoss="8.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk1.3" depart="360.00" type="DEFAULT_PEDTYPE" speedFactor="0.95">
+        <walk depart="360.00" departPos="0.00" arrival="1352.00" arrivalPos="101.14" duration="992.00" routeLength="1128.71" timeLoss="137.63" maxSpeed="1.32"/>
+    </personinfo>
+    <personinfo id="walk3.23" depart="1035.00" type="DEFAULT_PEDTYPE" speedFactor="0.80">
+        <walk depart="1035.00" departPos="0.00" arrival="1355.00" arrivalPos="88.97" duration="320.00" routeLength="315.13" timeLoss="34.74" maxSpeed="1.10"/>
+    </personinfo>
+    <personinfo id="walk3.25" depart="1125.00" type="DEFAULT_PEDTYPE" speedFactor="1.12">
+        <walk depart="1125.00" departPos="0.00" arrival="1369.00" arrivalPos="88.97" duration="244.00" routeLength="315.13" timeLoss="42.28" maxSpeed="1.56"/>
+    </personinfo>
+    <personinfo id="walk2.7" depart="840.00" type="DEFAULT_PEDTYPE" speedFactor="0.99">
+        <walk depart="840.00" departPos="0.00" arrival="1392.00" arrivalPos="111.70" duration="552.00" routeLength="683.33" timeLoss="55.53" maxSpeed="1.38"/>
+    </personinfo>
+    <personinfo id="walk4.29" depart="1305.00" type="vt_p" speedFactor="0.85">
+        <walk depart="1305.00" departPos="0.00" arrival="1395.00" arrivalPos="77.60" duration="90.00" routeLength="306.74" timeLoss="28.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk1.4" depart="480.00" type="DEFAULT_PEDTYPE" speedFactor="1.04">
+        <walk depart="480.00" departPos="0.00" arrival="1404.00" arrivalPos="101.14" duration="924.00" routeLength="1136.05" timeLoss="139.09" maxSpeed="1.45"/>
+    </personinfo>
+    <personinfo id="walk3.24" depart="1080.00" type="DEFAULT_PEDTYPE" speedFactor="0.77">
+        <walk depart="1080.00" departPos="0.00" arrival="1410.00" arrivalPos="88.97" duration="330.00" routeLength="315.13" timeLoss="35.25" maxSpeed="1.07"/>
+    </personinfo>
+    <personinfo id="walk4.30" depart="1350.00" type="vt_p" speedFactor="1.09">
+        <walk depart="1350.00" departPos="0.00" arrival="1419.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk1.5" depart="600.00" type="DEFAULT_PEDTYPE" speedFactor="1.10">
+        <walk depart="600.00" departPos="0.00" arrival="1474.00" arrivalPos="101.14" duration="874.00" routeLength="1136.05" timeLoss="127.42" maxSpeed="1.52"/>
+    </personinfo>
+    <personinfo id="walk3.26" depart="1170.00" type="DEFAULT_PEDTYPE" speedFactor="0.92">
+        <walk depart="1170.00" departPos="0.00" arrival="1477.00" arrivalPos="88.97" duration="307.00" routeLength="315.13" timeLoss="60.64" maxSpeed="1.28"/>
+    </personinfo>
+    <personinfo id="walk3.27" depart="1215.00" type="DEFAULT_PEDTYPE" speedFactor="1.01">
+        <walk depart="1215.00" departPos="0.00" arrival="1477.00" arrivalPos="88.97" duration="262.00" routeLength="315.13" timeLoss="36.37" maxSpeed="1.40"/>
+    </personinfo>
+    <personinfo id="walk3.28" depart="1260.00" type="DEFAULT_PEDTYPE" speedFactor="1.16">
+        <walk depart="1260.00" departPos="0.00" arrival="1478.00" arrivalPos="88.97" duration="218.00" routeLength="315.13" timeLoss="22.15" maxSpeed="1.61"/>
+    </personinfo>
+    <personinfo id="walk4.31" depart="1395.00" type="vt_p" speedFactor="0.86">
+        <walk depart="1395.00" departPos="0.00" arrival="1483.00" arrivalPos="77.60" duration="88.00" routeLength="306.74" timeLoss="26.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="bus1.23" depart="230.00" type="DEFAULT_PEDTYPE" speedFactor="1.17">
+        <walk depart="230.00" departPos="0.00" arrival="373.00" arrivalPos="208.50" duration="143.00" routeLength="208.50" timeLoss="14.81" maxSpeed="1.63"/>
+        <ride waitingTime="319.00" vehicle="w2e_106.1" depart="692.00" arrival="930.00" arrivalPos="209.98" duration="238.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="930.00" departPos="209.98" arrival="1186.00" arrivalPos="161.25" duration="256.00" routeLength="347.34" timeLoss="42.45" maxSpeed="1.63"/>
+        <ride waitingTime="197.00" vehicle="down2up_211.2" depart="1383.00" arrival="1488.00" arrivalPos="154.99" duration="105.00" routeLength="776.62" timeLoss="18.70"/>
+        <walk depart="1488.00" departPos="154.99" arrival="1506.00" arrivalPos="180.69" duration="18.00" routeLength="25.70" timeLoss="2.20" maxSpeed="1.63"/>
+    </personinfo>
+    <personinfo id="bus1.6" depart="60.00" type="DEFAULT_PEDTYPE" speedFactor="1.19">
+        <walk depart="60.00" departPos="0.00" arrival="208.00" arrivalPos="208.50" duration="148.00" routeLength="208.50" timeLoss="21.58" maxSpeed="1.65"/>
+        <ride waitingTime="484.00" vehicle="w2e_106.1" depart="692.00" arrival="921.00" arrivalPos="209.98" duration="229.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="921.00" departPos="209.98" arrival="1177.00" arrivalPos="161.25" duration="256.00" routeLength="347.34" timeLoss="45.40" maxSpeed="1.65"/>
+        <ride waitingTime="206.00" vehicle="down2up_211.2" depart="1383.00" arrival="1488.00" arrivalPos="154.99" duration="105.00" routeLength="776.62" timeLoss="18.70"/>
+        <walk depart="1488.00" departPos="154.99" arrival="1506.00" arrivalPos="180.69" duration="18.00" routeLength="25.70" timeLoss="2.42" maxSpeed="1.65"/>
+    </personinfo>
+    <personinfo id="bus1.9" depart="90.00" type="DEFAULT_PEDTYPE" speedFactor="1.19">
+        <walk depart="90.00" departPos="0.00" arrival="231.00" arrivalPos="208.50" duration="141.00" routeLength="208.50" timeLoss="14.68" maxSpeed="1.65"/>
+        <ride waitingTime="461.00" vehicle="w2e_106.1" depart="692.00" arrival="922.00" arrivalPos="209.98" duration="230.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="922.00" departPos="209.98" arrival="1175.00" arrivalPos="161.25" duration="253.00" routeLength="347.34" timeLoss="42.56" maxSpeed="1.65"/>
+        <ride waitingTime="208.00" vehicle="down2up_211.2" depart="1383.00" arrival="1488.00" arrivalPos="154.99" duration="105.00" routeLength="776.62" timeLoss="18.70"/>
+        <walk depart="1488.00" departPos="154.99" arrival="1506.00" arrivalPos="180.69" duration="18.00" routeLength="25.70" timeLoss="2.43" maxSpeed="1.65"/>
+    </personinfo>
+    <personinfo id="bus1.20" depart="200.00" type="DEFAULT_PEDTYPE" speedFactor="1.09">
+        <walk depart="200.00" departPos="0.00" arrival="353.00" arrivalPos="208.50" duration="153.00" routeLength="208.50" timeLoss="15.68" maxSpeed="1.52"/>
+        <ride waitingTime="339.00" vehicle="w2e_106.1" depart="692.00" arrival="929.00" arrivalPos="209.98" duration="237.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="929.00" departPos="209.98" arrival="1189.00" arrivalPos="161.25" duration="260.00" routeLength="347.34" timeLoss="31.24" maxSpeed="1.52"/>
+        <ride waitingTime="194.00" vehicle="down2up_211.2" depart="1383.00" arrival="1489.00" arrivalPos="154.99" duration="106.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1489.00" departPos="154.99" arrival="1509.00" arrivalPos="180.69" duration="20.00" routeLength="25.70" timeLoss="3.07" maxSpeed="1.52"/>
+    </personinfo>
+    <personinfo id="bus1.32" depart="320.00" type="DEFAULT_PEDTYPE" speedFactor="1.13">
+        <walk depart="320.00" departPos="0.00" arrival="468.00" arrivalPos="208.50" duration="148.00" routeLength="208.50" timeLoss="15.39" maxSpeed="1.57"/>
+        <ride waitingTime="224.00" vehicle="w2e_106.1" depart="692.00" arrival="934.00" arrivalPos="209.98" duration="242.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="934.00" departPos="209.98" arrival="1192.00" arrivalPos="161.25" duration="258.00" routeLength="347.34" timeLoss="37.08" maxSpeed="1.57"/>
+        <ride waitingTime="191.00" vehicle="down2up_211.2" depart="1383.00" arrival="1489.00" arrivalPos="154.99" duration="106.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1489.00" departPos="154.99" arrival="1509.00" arrivalPos="180.69" duration="20.00" routeLength="25.70" timeLoss="3.65" maxSpeed="1.57"/>
+    </personinfo>
+    <personinfo id="walk4.32" depart="1440.00" type="vt_p" speedFactor="0.85">
+        <walk depart="1440.00" departPos="0.00" arrival="1509.00" arrivalPos="77.60" duration="69.00" routeLength="306.74" timeLoss="7.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="bus1.11" depart="110.00" type="DEFAULT_PEDTYPE" speedFactor="1.07">
+        <walk depart="110.00" departPos="0.00" arrival="267.00" arrivalPos="208.50" duration="157.00" routeLength="208.50" timeLoss="16.20" maxSpeed="1.48"/>
+        <ride waitingTime="425.00" vehicle="w2e_106.1" depart="692.00" arrival="925.00" arrivalPos="209.98" duration="233.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="925.00" departPos="209.98" arrival="1193.00" arrivalPos="161.25" duration="268.00" routeLength="347.34" timeLoss="33.44" maxSpeed="1.48"/>
+        <ride waitingTime="190.00" vehicle="down2up_211.2" depart="1383.00" arrival="1490.00" arrivalPos="154.99" duration="107.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1490.00" departPos="154.99" arrival="1510.00" arrivalPos="180.69" duration="20.00" routeLength="25.70" timeLoss="2.64" maxSpeed="1.48"/>
+    </personinfo>
+    <personinfo id="bus1.29" depart="290.00" type="DEFAULT_PEDTYPE" speedFactor="1.12">
+        <walk depart="290.00" departPos="0.00" arrival="445.00" arrivalPos="208.50" duration="155.00" routeLength="208.50" timeLoss="20.69" maxSpeed="1.55"/>
+        <ride waitingTime="247.00" vehicle="w2e_106.1" depart="692.00" arrival="933.00" arrivalPos="209.98" duration="241.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="933.00" departPos="209.98" arrival="1193.00" arrivalPos="161.25" duration="260.00" routeLength="347.34" timeLoss="36.25" maxSpeed="1.55"/>
+        <ride waitingTime="190.00" vehicle="down2up_211.2" depart="1383.00" arrival="1490.00" arrivalPos="154.99" duration="107.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1490.00" departPos="154.99" arrival="1510.00" arrivalPos="180.69" duration="20.00" routeLength="25.70" timeLoss="3.44" maxSpeed="1.55"/>
+    </personinfo>
+    <personinfo id="bus1.12" depart="120.00" type="DEFAULT_PEDTYPE" speedFactor="1.10">
+        <walk depart="120.00" departPos="0.00" arrival="271.00" arrivalPos="208.50" duration="151.00" routeLength="208.50" timeLoss="14.63" maxSpeed="1.53"/>
+        <ride waitingTime="421.00" vehicle="w2e_106.1" depart="692.00" arrival="925.00" arrivalPos="209.98" duration="233.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="925.00" departPos="209.98" arrival="1194.00" arrivalPos="161.25" duration="269.00" routeLength="347.34" timeLoss="41.81" maxSpeed="1.53"/>
+        <ride waitingTime="189.00" vehicle="down2up_211.2" depart="1383.00" arrival="1491.00" arrivalPos="154.99" duration="108.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1491.00" departPos="154.99" arrival="1511.00" arrivalPos="180.69" duration="20.00" routeLength="25.70" timeLoss="3.19" maxSpeed="1.53"/>
+    </personinfo>
+    <personinfo id="bus1.19" depart="190.00" type="DEFAULT_PEDTYPE" speedFactor="1.15">
+        <walk depart="190.00" departPos="0.00" arrival="349.00" arrivalPos="208.50" duration="159.00" routeLength="208.50" timeLoss="28.23" maxSpeed="1.59"/>
+        <ride waitingTime="343.00" vehicle="w2e_106.1" depart="692.00" arrival="929.00" arrivalPos="209.98" duration="237.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="929.00" departPos="209.98" arrival="1195.00" arrivalPos="161.25" duration="266.00" routeLength="347.34" timeLoss="48.16" maxSpeed="1.59"/>
+        <ride waitingTime="188.00" vehicle="down2up_211.2" depart="1383.00" arrival="1491.00" arrivalPos="154.99" duration="108.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1491.00" departPos="154.99" arrival="1511.00" arrivalPos="180.69" duration="20.00" routeLength="25.70" timeLoss="3.88" maxSpeed="1.59"/>
+    </personinfo>
+    <personinfo id="bus1.4" depart="40.00" type="DEFAULT_PEDTYPE" speedFactor="1.02">
+        <walk depart="40.00" departPos="0.00" arrival="204.00" arrivalPos="208.50" duration="164.00" routeLength="208.50" timeLoss="16.94" maxSpeed="1.42"/>
+        <ride waitingTime="488.00" vehicle="w2e_106.1" depart="692.00" arrival="920.00" arrivalPos="209.98" duration="228.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="920.00" departPos="209.98" arrival="1197.00" arrivalPos="161.25" duration="277.00" routeLength="347.34" timeLoss="32.01" maxSpeed="1.42"/>
+        <ride waitingTime="186.00" vehicle="down2up_211.2" depart="1383.00" arrival="1492.00" arrivalPos="154.99" duration="109.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1492.00" departPos="154.99" arrival="1513.00" arrivalPos="180.69" duration="21.00" routeLength="25.70" timeLoss="2.87" maxSpeed="1.42"/>
+    </personinfo>
+    <personinfo id="bus1.5" depart="50.00" type="DEFAULT_PEDTYPE" speedFactor="1.07">
+        <walk depart="50.00" departPos="0.00" arrival="207.00" arrivalPos="208.50" duration="157.00" routeLength="208.50" timeLoss="16.79" maxSpeed="1.49"/>
+        <ride waitingTime="485.00" vehicle="w2e_106.1" depart="692.00" arrival="921.00" arrivalPos="209.98" duration="229.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="921.00" departPos="209.98" arrival="1198.00" arrivalPos="161.25" duration="277.00" routeLength="347.34" timeLoss="43.43" maxSpeed="1.49"/>
+        <ride waitingTime="185.00" vehicle="down2up_211.2" depart="1383.00" arrival="1492.00" arrivalPos="154.99" duration="109.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1492.00" departPos="154.99" arrival="1513.00" arrivalPos="180.69" duration="21.00" routeLength="25.70" timeLoss="3.72" maxSpeed="1.49"/>
+    </personinfo>
+    <personinfo id="bus1.34" depart="340.00" type="DEFAULT_PEDTYPE" speedFactor="1.12">
+        <walk depart="340.00" departPos="0.00" arrival="513.00" arrivalPos="208.50" duration="173.00" routeLength="208.50" timeLoss="39.02" maxSpeed="1.56"/>
+        <ride waitingTime="179.00" vehicle="w2e_106.1" depart="692.00" arrival="936.00" arrivalPos="209.98" duration="244.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="936.00" departPos="209.98" arrival="1201.00" arrivalPos="161.25" duration="265.00" routeLength="347.34" timeLoss="41.81" maxSpeed="1.56"/>
+        <ride waitingTime="182.00" vehicle="down2up_211.2" depart="1383.00" arrival="1494.00" arrivalPos="154.99" duration="111.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1494.00" departPos="154.99" arrival="1514.00" arrivalPos="180.69" duration="20.00" routeLength="25.70" timeLoss="3.49" maxSpeed="1.56"/>
+    </personinfo>
+    <personinfo id="bus1.17" depart="170.00" type="DEFAULT_PEDTYPE" speedFactor="1.03">
+        <walk depart="170.00" departPos="0.00" arrival="332.00" arrivalPos="208.50" duration="162.00" routeLength="208.50" timeLoss="16.77" maxSpeed="1.44"/>
+        <ride waitingTime="360.00" vehicle="w2e_106.1" depart="692.00" arrival="928.00" arrivalPos="209.98" duration="236.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="928.00" departPos="209.98" arrival="1200.00" arrivalPos="161.25" duration="272.00" routeLength="347.34" timeLoss="30.07" maxSpeed="1.44"/>
+        <ride waitingTime="183.00" vehicle="down2up_211.2" depart="1383.00" arrival="1493.00" arrivalPos="154.99" duration="110.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1493.00" departPos="154.99" arrival="1514.00" arrivalPos="180.69" duration="21.00" routeLength="25.70" timeLoss="3.10" maxSpeed="1.44"/>
+    </personinfo>
+    <personinfo id="bus1.7" depart="70.00" type="DEFAULT_PEDTYPE" speedFactor="1.06">
+        <walk depart="70.00" departPos="0.00" arrival="229.00" arrivalPos="208.50" duration="159.00" routeLength="208.50" timeLoss="17.87" maxSpeed="1.48"/>
+        <ride waitingTime="463.00" vehicle="w2e_106.1" depart="692.00" arrival="922.00" arrivalPos="209.98" duration="230.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="922.00" departPos="209.98" arrival="1199.00" arrivalPos="161.25" duration="277.00" routeLength="347.34" timeLoss="41.89" maxSpeed="1.48"/>
+        <ride waitingTime="184.00" vehicle="down2up_211.2" depart="1383.00" arrival="1493.00" arrivalPos="154.99" duration="110.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1493.00" departPos="154.99" arrival="1514.00" arrivalPos="180.69" duration="21.00" routeLength="25.70" timeLoss="3.60" maxSpeed="1.48"/>
+    </personinfo>
+    <personinfo id="bus1.10" depart="100.00" type="DEFAULT_PEDTYPE" speedFactor="1.05">
+        <walk depart="100.00" departPos="0.00" arrival="266.00" arrivalPos="208.50" duration="166.00" routeLength="208.50" timeLoss="22.74" maxSpeed="1.46"/>
+        <ride waitingTime="426.00" vehicle="w2e_106.1" depart="692.00" arrival="924.00" arrivalPos="209.98" duration="232.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="924.00" departPos="209.98" arrival="1204.00" arrivalPos="161.25" duration="280.00" routeLength="347.34" timeLoss="41.35" maxSpeed="1.46"/>
+        <ride waitingTime="179.00" vehicle="down2up_211.2" depart="1383.00" arrival="1494.00" arrivalPos="154.99" duration="111.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1494.00" departPos="154.99" arrival="1515.00" arrivalPos="180.69" duration="21.00" routeLength="25.70" timeLoss="3.34" maxSpeed="1.46"/>
+    </personinfo>
+    <personinfo id="bus1.15" depart="150.00" type="DEFAULT_PEDTYPE" speedFactor="1.00">
+        <walk depart="150.00" departPos="0.00" arrival="317.00" arrivalPos="208.50" duration="167.00" routeLength="208.50" timeLoss="16.43" maxSpeed="1.38"/>
+        <ride waitingTime="375.00" vehicle="w2e_106.1" depart="692.00" arrival="927.00" arrivalPos="209.98" duration="235.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="927.00" departPos="209.98" arrival="1212.00" arrivalPos="161.25" duration="285.00" routeLength="347.34" timeLoss="34.16" maxSpeed="1.38"/>
+        <ride waitingTime="171.00" vehicle="down2up_211.2" depart="1383.00" arrival="1495.00" arrivalPos="154.99" duration="112.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1495.00" departPos="154.99" arrival="1516.00" arrivalPos="180.69" duration="21.00" routeLength="25.70" timeLoss="2.44" maxSpeed="1.38"/>
+    </personinfo>
+    <personinfo id="bus1.18" depart="180.00" type="DEFAULT_PEDTYPE" speedFactor="1.00">
+        <walk depart="180.00" departPos="0.00" arrival="348.00" arrivalPos="208.50" duration="168.00" routeLength="208.50" timeLoss="17.56" maxSpeed="1.39"/>
+        <ride waitingTime="344.00" vehicle="w2e_106.1" depart="692.00" arrival="928.00" arrivalPos="209.98" duration="236.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="928.00" departPos="209.98" arrival="1211.00" arrivalPos="161.25" duration="283.00" routeLength="347.34" timeLoss="32.39" maxSpeed="1.39"/>
+        <ride waitingTime="172.00" vehicle="down2up_211.2" depart="1383.00" arrival="1495.00" arrivalPos="154.99" duration="112.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1495.00" departPos="154.99" arrival="1517.00" arrivalPos="180.69" duration="22.00" routeLength="25.70" timeLoss="3.46" maxSpeed="1.39"/>
+    </personinfo>
+    <personinfo id="bus1.38" depart="380.00" type="DEFAULT_PEDTYPE" speedFactor="1.04">
+        <walk depart="380.00" departPos="0.00" arrival="541.00" arrivalPos="208.50" duration="161.00" routeLength="208.50" timeLoss="16.90" maxSpeed="1.45"/>
+        <ride waitingTime="151.00" vehicle="w2e_106.1" depart="692.00" arrival="937.00" arrivalPos="209.98" duration="245.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="937.00" departPos="209.98" arrival="1223.00" arrivalPos="161.25" duration="286.00" routeLength="347.34" timeLoss="45.95" maxSpeed="1.45"/>
+        <ride waitingTime="160.00" vehicle="down2up_211.2" depart="1383.00" arrival="1497.00" arrivalPos="154.99" duration="114.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1497.00" departPos="154.99" arrival="1518.00" arrivalPos="180.69" duration="21.00" routeLength="25.70" timeLoss="3.24" maxSpeed="1.45"/>
+    </personinfo>
+    <personinfo id="bus1.3" depart="30.00" type="DEFAULT_PEDTYPE" speedFactor="0.95">
+        <walk depart="30.00" departPos="0.00" arrival="239.00" arrivalPos="208.50" duration="209.00" routeLength="208.50" timeLoss="51.29" maxSpeed="1.32"/>
+        <ride waitingTime="453.00" vehicle="w2e_106.1" depart="692.00" arrival="923.00" arrivalPos="209.98" duration="231.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="923.00" departPos="209.98" arrival="1215.00" arrivalPos="161.25" duration="292.00" routeLength="347.34" timeLoss="29.28" maxSpeed="1.32"/>
+        <ride waitingTime="168.00" vehicle="down2up_211.2" depart="1383.00" arrival="1496.00" arrivalPos="154.99" duration="113.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1496.00" departPos="154.99" arrival="1519.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="3.56" maxSpeed="1.32"/>
+    </personinfo>
+    <personinfo id="bus1.31" depart="310.00" type="DEFAULT_PEDTYPE" speedFactor="1.08">
+        <walk depart="310.00" departPos="0.00" arrival="480.00" arrivalPos="208.50" duration="170.00" routeLength="208.50" timeLoss="31.05" maxSpeed="1.50"/>
+        <ride waitingTime="212.00" vehicle="w2e_106.1" depart="692.00" arrival="935.00" arrivalPos="209.98" duration="243.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="935.00" departPos="209.98" arrival="1216.00" arrivalPos="161.25" duration="281.00" routeLength="347.34" timeLoss="49.53" maxSpeed="1.50"/>
+        <ride waitingTime="167.00" vehicle="down2up_211.2" depart="1383.00" arrival="1496.00" arrivalPos="154.99" duration="113.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1496.00" departPos="154.99" arrival="1519.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="5.87" maxSpeed="1.50"/>
+    </personinfo>
+    <personinfo id="bus1.13" depart="130.00" type="DEFAULT_PEDTYPE" speedFactor="0.94">
+        <walk depart="130.00" departPos="0.00" arrival="307.00" arrivalPos="208.50" duration="177.00" routeLength="208.50" timeLoss="17.62" maxSpeed="1.31"/>
+        <ride waitingTime="385.00" vehicle="w2e_106.1" depart="692.00" arrival="926.00" arrivalPos="209.98" duration="234.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="926.00" departPos="209.98" arrival="1225.00" arrivalPos="161.25" duration="299.00" routeLength="347.34" timeLoss="33.49" maxSpeed="1.31"/>
+        <ride waitingTime="158.00" vehicle="down2up_211.2" depart="1383.00" arrival="1497.00" arrivalPos="154.99" duration="114.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1497.00" departPos="154.99" arrival="1520.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="3.35" maxSpeed="1.31"/>
+    </personinfo>
+    <personinfo id="bus1.14" depart="140.00" type="DEFAULT_PEDTYPE" speedFactor="0.96">
+        <walk depart="140.00" departPos="0.00" arrival="315.00" arrivalPos="208.50" duration="175.00" routeLength="208.50" timeLoss="18.90" maxSpeed="1.34"/>
+        <ride waitingTime="377.00" vehicle="w2e_106.1" depart="692.00" arrival="926.00" arrivalPos="209.98" duration="234.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="926.00" departPos="209.98" arrival="1226.00" arrivalPos="161.25" duration="300.00" routeLength="347.34" timeLoss="39.95" maxSpeed="1.34"/>
+        <ride waitingTime="157.00" vehicle="down2up_211.2" depart="1383.00" arrival="1498.00" arrivalPos="154.99" duration="115.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1498.00" departPos="154.99" arrival="1520.00" arrivalPos="180.69" duration="22.00" routeLength="25.70" timeLoss="2.76" maxSpeed="1.34"/>
+    </personinfo>
+    <personinfo id="bus1.21" depart="210.00" type="DEFAULT_PEDTYPE" speedFactor="0.96">
+        <walk depart="210.00" departPos="0.00" arrival="385.00" arrivalPos="208.50" duration="175.00" routeLength="208.50" timeLoss="18.58" maxSpeed="1.33"/>
+        <ride waitingTime="307.00" vehicle="w2e_106.1" depart="692.00" arrival="930.00" arrivalPos="209.98" duration="238.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="930.00" departPos="209.98" arrival="1227.00" arrivalPos="161.25" duration="297.00" routeLength="347.34" timeLoss="36.41" maxSpeed="1.33"/>
+        <ride waitingTime="156.00" vehicle="down2up_211.2" depart="1383.00" arrival="1498.00" arrivalPos="154.99" duration="115.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1498.00" departPos="154.99" arrival="1521.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="3.72" maxSpeed="1.33"/>
+    </personinfo>
+    <personinfo id="bus1.0" depart="0.00" type="DEFAULT_PEDTYPE" speedFactor="0.90">
+        <walk depart="0.00" departPos="0.00" arrival="185.00" arrivalPos="208.50" duration="185.00" routeLength="208.50" timeLoss="18.01" maxSpeed="1.25"/>
+        <ride waitingTime="507.00" vehicle="w2e_106.1" depart="692.00" arrival="920.00" arrivalPos="209.98" duration="228.00" routeLength="797.42" timeLoss="139.41"/>
+        <walk depart="920.00" departPos="209.98" arrival="1229.00" arrivalPos="161.25" duration="309.00" routeLength="347.34" timeLoss="30.82" maxSpeed="1.25"/>
+        <ride waitingTime="154.00" vehicle="down2up_211.2" depart="1383.00" arrival="1499.00" arrivalPos="154.99" duration="116.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1499.00" departPos="154.99" arrival="1522.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="2.42" maxSpeed="1.25"/>
+    </personinfo>
+    <personinfo id="bus1.1" depart="10.00" type="DEFAULT_PEDTYPE" speedFactor="0.93">
+        <walk depart="10.00" departPos="0.00" arrival="189.00" arrivalPos="208.50" duration="179.00" routeLength="208.50" timeLoss="18.19" maxSpeed="1.30"/>
+        <ride waitingTime="503.00" vehicle="w2e_106.1" depart="692.00" arrival="920.00" arrivalPos="209.98" duration="228.00" routeLength="797.42" timeLoss="139.41"/>
+        <walk depart="920.00" departPos="209.98" arrival="1230.00" arrivalPos="161.25" duration="310.00" routeLength="347.34" timeLoss="42.10" maxSpeed="1.30"/>
+        <ride waitingTime="153.00" vehicle="down2up_211.2" depart="1383.00" arrival="1499.00" arrivalPos="154.99" duration="116.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1499.00" departPos="154.99" arrival="1523.00" arrivalPos="180.69" duration="24.00" routeLength="25.70" timeLoss="4.18" maxSpeed="1.30"/>
+    </personinfo>
+    <personinfo id="bus1.24" depart="240.00" type="DEFAULT_PEDTYPE" speedFactor="0.95">
+        <walk depart="240.00" departPos="0.00" arrival="418.00" arrivalPos="208.50" duration="178.00" routeLength="208.50" timeLoss="19.61" maxSpeed="1.32"/>
+        <ride waitingTime="274.00" vehicle="w2e_106.1" depart="692.00" arrival="931.00" arrivalPos="209.98" duration="239.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="931.00" departPos="209.98" arrival="1231.00" arrivalPos="161.25" duration="300.00" routeLength="347.34" timeLoss="36.14" maxSpeed="1.32"/>
+        <ride waitingTime="152.00" vehicle="down2up_211.2" depart="1383.00" arrival="1500.00" arrivalPos="154.99" duration="117.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1500.00" departPos="154.99" arrival="1523.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="3.48" maxSpeed="1.32"/>
+    </personinfo>
+    <personinfo id="bus1.16" depart="160.00" type="DEFAULT_PEDTYPE" speedFactor="0.98">
+        <walk depart="160.00" departPos="0.00" arrival="330.00" arrivalPos="208.50" duration="170.00" routeLength="208.50" timeLoss="16.57" maxSpeed="1.36"/>
+        <ride waitingTime="362.00" vehicle="w2e_106.1" depart="692.00" arrival="927.00" arrivalPos="209.98" duration="235.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="927.00" departPos="209.98" arrival="1230.00" arrivalPos="161.25" duration="303.00" routeLength="347.34" timeLoss="47.39" maxSpeed="1.36"/>
+        <ride waitingTime="153.00" vehicle="down2up_211.2" depart="1383.00" arrival="1500.00" arrivalPos="154.99" duration="117.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1500.00" departPos="154.99" arrival="1523.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="4.09" maxSpeed="1.36"/>
+    </personinfo>
+    <personinfo id="bus1.26" depart="260.00" type="DEFAULT_PEDTYPE" speedFactor="0.96">
+        <walk depart="260.00" departPos="0.00" arrival="439.00" arrivalPos="208.50" duration="179.00" routeLength="208.50" timeLoss="22.77" maxSpeed="1.33"/>
+        <ride waitingTime="253.00" vehicle="w2e_106.1" depart="692.00" arrival="932.00" arrivalPos="209.98" duration="240.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="932.00" departPos="209.98" arrival="1232.00" arrivalPos="161.25" duration="300.00" routeLength="347.34" timeLoss="39.74" maxSpeed="1.33"/>
+        <ride waitingTime="151.00" vehicle="down2up_211.2" depart="1383.00" arrival="1501.00" arrivalPos="154.99" duration="118.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1501.00" departPos="154.99" arrival="1524.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="3.74" maxSpeed="1.33"/>
+    </personinfo>
+    <personinfo id="bus1.22" depart="220.00" type="DEFAULT_PEDTYPE" speedFactor="0.94">
+        <walk depart="220.00" departPos="0.00" arrival="399.00" arrivalPos="208.50" duration="179.00" routeLength="208.50" timeLoss="19.65" maxSpeed="1.31"/>
+        <ride waitingTime="293.00" vehicle="w2e_106.1" depart="692.00" arrival="931.00" arrivalPos="209.98" duration="239.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="931.00" departPos="209.98" arrival="1233.00" arrivalPos="161.25" duration="302.00" routeLength="347.34" timeLoss="36.54" maxSpeed="1.31"/>
+        <ride waitingTime="150.00" vehicle="down2up_211.2" depart="1383.00" arrival="1501.00" arrivalPos="154.99" duration="118.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1501.00" departPos="154.99" arrival="1524.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="3.36" maxSpeed="1.31"/>
+    </personinfo>
+    <personinfo id="bus1.27" depart="270.00" type="DEFAULT_PEDTYPE" speedFactor="0.93">
+        <walk depart="270.00" departPos="0.00" arrival="450.00" arrivalPos="208.50" duration="180.00" routeLength="208.50" timeLoss="18.22" maxSpeed="1.29"/>
+        <ride waitingTime="242.00" vehicle="w2e_106.1" depart="692.00" arrival="933.00" arrivalPos="209.98" duration="241.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="933.00" departPos="209.98" arrival="1235.00" arrivalPos="161.25" duration="302.00" routeLength="347.34" timeLoss="32.48" maxSpeed="1.29"/>
+        <ride waitingTime="148.00" vehicle="down2up_211.2" depart="1383.00" arrival="1502.00" arrivalPos="154.99" duration="119.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1502.00" departPos="154.99" arrival="1524.00" arrivalPos="180.69" duration="22.00" routeLength="25.70" timeLoss="2.06" maxSpeed="1.29"/>
+    </personinfo>
+    <personinfo id="bus1.30" depart="300.00" type="DEFAULT_PEDTYPE" speedFactor="0.93">
+        <walk depart="300.00" departPos="0.00" arrival="479.00" arrivalPos="208.50" duration="179.00" routeLength="208.50" timeLoss="17.58" maxSpeed="1.29"/>
+        <ride waitingTime="213.00" vehicle="w2e_106.1" depart="692.00" arrival="935.00" arrivalPos="209.98" duration="243.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="935.00" departPos="209.98" arrival="1236.00" arrivalPos="161.25" duration="301.00" routeLength="347.34" timeLoss="32.09" maxSpeed="1.29"/>
+        <ride waitingTime="147.00" vehicle="down2up_211.2" depart="1383.00" arrival="1502.00" arrivalPos="154.99" duration="119.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1502.00" departPos="154.99" arrival="1525.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="3.10" maxSpeed="1.29"/>
+    </personinfo>
+    <personinfo id="bus1.28" depart="280.00" type="DEFAULT_PEDTYPE" speedFactor="0.92">
+        <walk depart="280.00" departPos="0.00" arrival="462.00" arrivalPos="208.50" duration="182.00" routeLength="208.50" timeLoss="18.58" maxSpeed="1.28"/>
+        <ride waitingTime="230.00" vehicle="w2e_106.1" depart="692.00" arrival="934.00" arrivalPos="209.98" duration="242.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="934.00" departPos="209.98" arrival="1241.00" arrivalPos="161.25" duration="307.00" routeLength="347.34" timeLoss="34.75" maxSpeed="1.28"/>
+        <ride waitingTime="142.00" vehicle="down2up_211.2" depart="1383.00" arrival="1503.00" arrivalPos="154.99" duration="120.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1503.00" departPos="154.99" arrival="1526.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="2.86" maxSpeed="1.28"/>
+    </personinfo>
+    <personinfo id="bus1.33" depart="330.00" type="DEFAULT_PEDTYPE" speedFactor="0.92">
+        <walk depart="330.00" departPos="0.00" arrival="514.00" arrivalPos="208.50" duration="184.00" routeLength="208.50" timeLoss="20.52" maxSpeed="1.28"/>
+        <ride waitingTime="178.00" vehicle="w2e_106.1" depart="692.00" arrival="936.00" arrivalPos="209.98" duration="244.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="936.00" departPos="209.98" arrival="1242.00" arrivalPos="161.25" duration="306.00" routeLength="347.34" timeLoss="33.66" maxSpeed="1.28"/>
+        <ride waitingTime="141.00" vehicle="down2up_211.2" depart="1383.00" arrival="1503.00" arrivalPos="154.99" duration="120.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1503.00" departPos="154.99" arrival="1527.00" arrivalPos="180.69" duration="24.00" routeLength="25.70" timeLoss="3.85" maxSpeed="1.28"/>
+    </personinfo>
+    <personinfo id="bus1.36" depart="360.00" type="DEFAULT_PEDTYPE" speedFactor="0.92">
+        <walk depart="360.00" departPos="0.00" arrival="543.00" arrivalPos="208.50" duration="183.00" routeLength="208.50" timeLoss="19.49" maxSpeed="1.28"/>
+        <ride waitingTime="149.00" vehicle="w2e_106.1" depart="692.00" arrival="938.00" arrivalPos="209.98" duration="246.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="938.00" departPos="209.98" arrival="1292.00" arrivalPos="161.25" duration="354.00" routeLength="347.34" timeLoss="81.61" maxSpeed="1.28"/>
+        <ride waitingTime="91.00" vehicle="down2up_211.2" depart="1383.00" arrival="1504.00" arrivalPos="154.99" duration="121.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1504.00" departPos="154.99" arrival="1527.00" arrivalPos="180.69" duration="23.00" routeLength="25.70" timeLoss="2.85" maxSpeed="1.28"/>
+    </personinfo>
+    <personinfo id="bus1.8" depart="80.00" type="DEFAULT_PEDTYPE" speedFactor="0.90">
+        <walk depart="80.00" departPos="0.00" arrival="265.00" arrivalPos="208.50" duration="185.00" routeLength="208.50" timeLoss="17.96" maxSpeed="1.25"/>
+        <ride waitingTime="427.00" vehicle="w2e_106.1" depart="692.00" arrival="924.00" arrivalPos="209.98" duration="232.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="924.00" departPos="209.98" arrival="1293.00" arrivalPos="161.25" duration="369.00" routeLength="347.34" timeLoss="90.73" maxSpeed="1.25"/>
+        <ride waitingTime="90.00" vehicle="down2up_211.2" depart="1383.00" arrival="1504.00" arrivalPos="154.99" duration="121.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1504.00" departPos="154.99" arrival="1528.00" arrivalPos="180.69" duration="24.00" routeLength="25.70" timeLoss="3.41" maxSpeed="1.25"/>
+    </personinfo>
+    <personinfo id="bus1.35" depart="350.00" type="DEFAULT_PEDTYPE" speedFactor="0.90">
+        <walk depart="350.00" departPos="0.00" arrival="535.00" arrivalPos="208.50" duration="185.00" routeLength="208.50" timeLoss="17.74" maxSpeed="1.25"/>
+        <ride waitingTime="157.00" vehicle="w2e_106.1" depart="692.00" arrival="937.00" arrivalPos="209.98" duration="245.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="937.00" departPos="209.98" arrival="1295.00" arrivalPos="161.25" duration="358.00" routeLength="347.34" timeLoss="79.35" maxSpeed="1.25"/>
+        <ride waitingTime="88.00" vehicle="down2up_211.2" depart="1383.00" arrival="1505.00" arrivalPos="154.99" duration="122.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1505.00" departPos="154.99" arrival="1530.00" arrivalPos="180.69" duration="25.00" routeLength="25.70" timeLoss="4.38" maxSpeed="1.25"/>
+    </personinfo>
+    <personinfo id="bus1.25" depart="250.00" type="DEFAULT_PEDTYPE" speedFactor="0.88">
+        <walk depart="250.00" departPos="0.00" arrival="438.00" arrivalPos="208.50" duration="188.00" routeLength="208.50" timeLoss="18.26" maxSpeed="1.23"/>
+        <ride waitingTime="254.00" vehicle="w2e_106.1" depart="692.00" arrival="932.00" arrivalPos="209.98" duration="240.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="932.00" departPos="209.98" arrival="1296.00" arrivalPos="161.25" duration="364.00" routeLength="347.34" timeLoss="81.23" maxSpeed="1.23"/>
+        <ride waitingTime="87.00" vehicle="down2up_211.2" depart="1383.00" arrival="1505.00" arrivalPos="154.99" duration="122.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1505.00" departPos="154.99" arrival="1530.00" arrivalPos="180.69" duration="25.00" routeLength="25.70" timeLoss="4.08" maxSpeed="1.23"/>
+    </personinfo>
+    <personinfo id="walk2.8" depart="960.00" type="DEFAULT_PEDTYPE" speedFactor="0.96">
+        <walk depart="960.00" departPos="0.00" arrival="1531.00" arrivalPos="111.70" duration="571.00" routeLength="683.33" timeLoss="57.06" maxSpeed="1.33"/>
+    </personinfo>
+    <personinfo id="bus1.2" depart="20.00" type="DEFAULT_PEDTYPE" speedFactor="0.77">
+        <walk depart="20.00" departPos="0.00" arrival="238.00" arrivalPos="208.50" duration="218.00" routeLength="208.50" timeLoss="23.19" maxSpeed="1.07"/>
+        <ride waitingTime="454.00" vehicle="w2e_106.1" depart="692.00" arrival="923.00" arrivalPos="209.98" duration="231.00" routeLength="797.37" timeLoss="139.41"/>
+        <walk depart="923.00" departPos="209.98" arrival="1324.00" arrivalPos="161.25" duration="401.00" routeLength="347.34" timeLoss="76.47" maxSpeed="1.07"/>
+        <ride waitingTime="59.00" vehicle="down2up_211.2" depart="1383.00" arrival="1506.00" arrivalPos="154.99" duration="123.00" routeLength="776.60" timeLoss="18.70"/>
+        <walk depart="1506.00" departPos="154.99" arrival="1533.00" arrivalPos="180.69" duration="27.00" routeLength="25.70" timeLoss="2.99" maxSpeed="1.07"/>
+    </personinfo>
+    <personinfo id="walk3.29" depart="1305.00" type="DEFAULT_PEDTYPE" speedFactor="1.21">
+        <walk depart="1305.00" departPos="0.00" arrival="1540.00" arrivalPos="88.97" duration="235.00" routeLength="315.13" timeLoss="47.59" maxSpeed="1.68"/>
+    </personinfo>
+    <personinfo id="walk1.6" depart="720.00" type="DEFAULT_PEDTYPE" speedFactor="1.08">
+        <walk depart="720.00" departPos="0.00" arrival="1557.00" arrivalPos="101.14" duration="837.00" routeLength="1128.71" timeLoss="86.33" maxSpeed="1.50"/>
+    </personinfo>
+    <personinfo id="walk4.33" depart="1485.00" type="vt_p" speedFactor="1.09">
+        <walk depart="1485.00" departPos="0.00" arrival="1571.00" arrivalPos="77.60" duration="86.00" routeLength="306.74" timeLoss="24.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk3.30" depart="1350.00" type="DEFAULT_PEDTYPE" speedFactor="1.06">
+        <walk depart="1350.00" departPos="0.00" arrival="1592.00" arrivalPos="88.97" duration="242.00" routeLength="315.13" timeLoss="27.10" maxSpeed="1.47"/>
+    </personinfo>
+    <personinfo id="walk4.34" depart="1530.00" type="vt_p" speedFactor="0.79">
+        <walk depart="1530.00" departPos="0.00" arrival="1598.00" arrivalPos="77.60" duration="68.00" routeLength="306.74" timeLoss="6.65" maxSpeed="5.00"/>
+    </personinfo>
+    <personinfo id="walk2.9" depart="1080.00" type="DEFAULT_PEDTYPE" speedFactor="1.05">
+        <walk depart="1080.00" departPos="0.00" arrival="1602.00" arrivalPos="111.70" duration="522.00" routeLength="683.33" timeLoss="51.55" maxSpeed="1.45"/>
+    </personinfo>
+</tripinfos>
