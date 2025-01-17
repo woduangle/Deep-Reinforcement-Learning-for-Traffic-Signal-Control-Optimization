@@ -1,0 +1,392 @@
+BASIC_SETTING:
+    sumo_start_config: ["sumo-gui", "-c", "sumo_network/example42_ex.sumocfg", '--start']
+    sumo_start_config_cmd: ["sumo", "-c", "sumo_network/example42_ex.sumocfg", '--start']
+    runtime_type: gui
+    sumo_dir: './sumo_network/'
+    episode: 200
+    pre_steps: 200
+    simulation_time: 3400
+
+PARAMETER_SETTING:
+    learning_model:
+      model: 'Actor-Critic(AC)'
+      learning_rate: 0.01
+      gamma: 0.98
+      maxlen: 500
+    action_selection:
+      model: 'boltzmann'
+      temperature: 1.0
+
+AGENT_ELEMENT_SETTING:
+    J1:
+      id: J1
+      cross_ids: J1
+      tls_ids: J1
+      states:
+          names: [
+            'Northbound direct-left OCC of the left intersection','Northbound direct-left SPEED of the left intersection','Northbound direct-left VOL of the left intersection','Northbound direct-left JAMLEN of the left intersection',
+            'Southbound direct-left OCC of the left intersection','Southbound direct-left SPEED of the left intersection','Southbound direct-left VOL of the left intersection','Southbound direct-left JAMLEN of the left intersection',
+            'Westbound direct OCC of the left intersection','Westbound direct SPEED of the left intersection','Westbound direct VOL of the left intersection','Westbound direct JAMLEN of the left intersection',
+            'Westbound left OCC of the left intersection','Westbound left SPEED of the left intersection','Westbound left VOL of the left intersection','Westbound left JAMLEN of the left intersection',
+            'Eastbound direct OCC of the left intersection','Eastbound direct SPEED of the left intersection','Eastbound direct VOL of the left intersection','Eastbound direct JAMLEN of the left intersection',
+            'Eastbound left OCC of the left intersection','Eastbound left SPEED of the left intersection','Eastbound left VOL of the left intersection','Eastbound left JAMLEN of the left intersection',
+          ]
+          func_names: {
+            'Northbound direct-left OCC of the left intersection': get_occ_on_e2,
+            'Northbound direct-left SPEED of the left intersection': get_speed_on_e2, 
+            'Northbound direct-left VOL of the left intersection': get_vol_on_e2,
+            'Northbound direct-left JAMLEN of the left intersection': get_jam_length_on_e2,
+
+            'Southbound direct-left OCC of the left intersection': get_occ_on_e2,
+            'Southbound direct-left SPEED of the left intersection': get_speed_on_e2, 
+            'Southbound direct-left VOL of the left intersection': get_vol_on_e2,
+            'Southbound direct-left JAMLEN of the left intersection': get_jam_length_on_e2,
+
+            'Westbound direct OCC of the left intersection': get_occ_on_e2,
+            'Westbound direct SPEED of the left intersection': get_speed_on_e2, 
+            'Westbound direct VOL of the left intersection': get_vol_on_e2,
+            'Westbound direct JAMLEN of the left intersection': get_jam_length_on_e2,
+           
+            'Westbound left OCC of the left intersection': get_occ_on_e2,
+            'Westbound left SPEED of the left intersection': get_speed_on_e2, 
+            'Westbound left VOL of the left intersection': get_vol_on_e2,
+            'Westbound left JAMLEN of the left intersection': get_jam_length_on_e2,
+
+            'Eastbound direct OCC of the left intersection': get_occ_on_e2,
+            'Eastbound direct SPEED of the left intersection': get_speed_on_e2, 
+            'Eastbound direct VOL of the left intersection': get_vol_on_e2,
+            'Eastbound direct JAMLEN of the left intersection': get_jam_length_on_e2,
+
+            'Eastbound left OCC of the left intersection': get_occ_on_e2,
+            'Eastbound left SPEED of the left intersection': get_speed_on_e2, 
+            'Eastbound left VOL of the left intersection': get_vol_on_e2,
+            'Eastbound left JAMLEN of the left intersection': get_jam_length_on_e2,
+          }
+          paras: {
+            'Northbound direct-left OCC of the left intersection': 'xingminlu_north_entry2',
+            'Northbound direct-left SPEED of the left intersection': 'xingminlu_north_entry2', 
+            'Northbound direct-left VOL of the left intersection': 'xingminlu_north_entry2',
+            'Northbound direct-left JAMLEN of the left intersection': 'xingminlu_north_entry2',
+
+            'Southbound direct-left OCC of the left intersection': 'xingminlu_south_entry2',
+            'Southbound direct-left SPEED of the left intersection': 'xingminlu_south_entry2', 
+            'Southbound direct-left VOL of the left intersection': 'xingminlu_south_entry2',
+            'Southbound direct-left JAMLEN of the left intersection': 'xingminlu_south_entry2',
+
+            'Westbound direct OCC of the left intersection': 'yuanlinlu_west_entry2',
+            'Westbound direct SPEED of the left intersection': 'yuanlinlu_west_entry2', 
+            'Westbound direct VOL of the left intersection': 'yuanlinlu_west_entry2',
+            'Westbound direct JAMLEN of the left intersection': 'yuanlinlu_west_entry2',
+
+            'Westbound left OCC of the left intersection': 'yuanlinlu_west_entry3',
+            'Westbound left SPEED of the left intersection': 'yuanlinlu_west_entry3', 
+            'Westbound left VOL of the left intersection': 'yuanlinlu_west_entry3',
+            'Westbound left JAMLEN of the left intersection': 'yuanlinlu_west_entry3',
+
+            'Eastbound direct OCC of the left intersection': 'yuanlinlu_west_mid_exit2',
+            'Eastbound direct SPEED of the left intersection': 'yuanlinlu_west_mid_exit2', 
+            'Eastbound direct VOL of the left intersection': 'yuanlinlu_west_mid_exit2',
+            'Eastbound direct JAMLEN of the left intersection': 'yuanlinlu_west_mid_exit2',
+
+            'Eastbound left OCC of the left intersection': 'yuanlinlu_west_mid_exit3',
+            'Eastbound left SPEED of the left intersection': 'yuanlinlu_west_mid_exit3', 
+            'Eastbound left VOL of the left intersection': 'yuanlinlu_west_mid_exit3',
+            'Eastbound left JAMLEN of the left intersection': 'yuanlinlu_west_mid_exit3',  
+
+          }
+      actions:
+          names: [ 'Switch to control scheme 0','Switch to control scheme 1',
+                   'Switch to control scheme 2','Switch to control scheme 3',
+                   'Switch to control scheme 4','Switch to control scheme 5',
+                   'Switch to control scheme 6','Switch to control scheme 7',
+                   'Switch to control scheme 8',
+              ]
+          func_names: {
+              'Switch to control scheme 0': switch_to_tls_program, 
+              'Switch to control scheme 1': switch_to_tls_program,
+              'Switch to control scheme 2': switch_to_tls_program,
+              'Switch to control scheme 3': switch_to_tls_program,
+              'Switch to control scheme 4': switch_to_tls_program,
+              'Switch to control scheme 5': switch_to_tls_program,
+              'Switch to control scheme 6': switch_to_tls_program,
+              'Switch to control scheme 7': switch_to_tls_program,
+              'Switch to control scheme 8': switch_to_tls_program,
+          }
+          paras: {
+              'Switch to control scheme 0': ['J1', 'tp_0', 81], # Multiple tlsIDs, control scheme IDs, cycle lengths
+              'Switch to control scheme 1': ['J1', 'tp_1', 100],
+              'Switch to control scheme 2': ['J1', 'tp_2', 80],
+              'Switch to control scheme 3': ['J1', 'tp_3', 88],
+              'Switch to control scheme 4': ['J1', 'tp_4', 84],
+              'Switch to control scheme 5': ['J1', 'tp_5', 75],
+              'Switch to control scheme 6': ['J1', 'tp_6', 34],
+              'Switch to control scheme 7': ['J1', 'tp_7', 62],
+              'Switch to control scheme 8': ['J1', 'tp_8', 135],
+          }
+      rewards:
+          names: 'Total Delay at Intersection
+'
+          func_names: {
+              'Total Delay at Intersection
+': get_interval_time_loss_on_e3_as_reward
+          }
+          paras: {
+              'Total Delay at Intersection
+': 'LEFT_e3_det'              
+          }
+    
+    J3:
+      id: J3
+      cross_ids: J3
+      tls_ids: J3
+      states:
+          names: [
+            'Northbound direct OCC of the middle intersection','Northbound direct SPEED of the middle intersection','Northbound direct VOL of the middle intersection','Northbound direct JAMLEN of the middle intersection',
+            'Northbound left OCC of the middle intersection','Northbound left SPEED of the middle intersection','Northbound left VOL of the middle intersection','Northbound left JAMLEN of the middle intersection',
+            'Southbound direct OCC of the middle intersection','Southbound direct SPEED of the middle intersection','Southbound direct VOL of the middle intersection','Southbound direct JAMLEN of the middle intersection',
+            'Southbound left OCC of the middle intersection','Southbound left SPEED of the middle intersection','Southbound left VOL of the middle intersection','Southbound left JAMLEN of the middle intersection',
+            'Westbound direct OCC of the middle intersection','Westbound direct SPEED of the middle intersection','Westbound direct VOL of the middle intersection','Westbound direct JAMLEN of the middle intersection',
+            'Westbound left OCC of the middle intersection','Westbound left SPEED of the middle intersection','Westbound left VOL of the middle intersection','Westbound left JAMLEN of the middle intersection',
+            'Eastbound direct OCC of the middle intersection','Eastbound direct SPEED of the middle intersection','Eastbound direct VOL of the middle intersection','Eastbound direct JAMLEN of the middle intersection',
+            'Eastbound left OCC of the middle intersection','Eastbound left SPEED of the middle intersection','Eastbound left VOL of the middle intersection','Eastbound left JAMLEN of the middle intersection',
+          ]
+          func_names: {
+            'Northbound direct OCC of the middle intersection': get_occ_on_e2,
+            'Northbound direct SPEED of the middle intersection': get_speed_on_e2, 
+            'Northbound direct VOL of the middle intersection': get_vol_on_e2,
+            'Northbound direct JAMLEN of the middle intersection': get_jam_length_on_e2,
+
+            'Northbound left OCC of the middle intersection': get_occ_on_e2,
+            'Northbound left SPEED of the middle intersection': get_speed_on_e2, 
+            'Northbound left VOL of the middle intersection': get_vol_on_e2,
+            'Northbound left JAMLEN of the middle intersection': get_jam_length_on_e2,
+
+            'Southbound direct OCC of the middle intersection': get_occ_on_e2,
+            'Southbound direct SPEED of the middle intersection': get_speed_on_e2, 
+            'Southbound direct VOL of the middle intersection': get_vol_on_e2,
+            'Southbound direct JAMLEN of the middle intersection': get_jam_length_on_e2,
+
+            'Southbound left OCC of the middle intersection': get_occ_on_e2,
+            'Southbound left SPEED of the middle intersection': get_speed_on_e2, 
+            'Southbound left VOL of the middle intersection': get_vol_on_e2,
+            'Southbound left JAMLEN of the middle intersection': get_jam_length_on_e2,
+
+            'Westbound direct OCC of the middle intersection': get_occ_on_e2,
+            'Westbound direct SPEED of the middle intersection': get_speed_on_e2, 
+            'Westbound direct VOL of the middle intersection': get_vol_on_e2,
+            'Westbound direct JAMLEN of the middle intersection': get_jam_length_on_e2,
+           
+            'Westbound left OCC of the middle intersection': get_occ_on_e2,
+            'Westbound left SPEED of the middle intersection': get_speed_on_e2, 
+            'Westbound left VOL of the middle intersection': get_vol_on_e2,
+            'Westbound left JAMLEN of the middle intersection': get_jam_length_on_e2,
+
+            'Eastbound direct OCC of the middle intersection': get_occ_on_e2,
+            'Eastbound direct SPEED of the middle intersection': get_speed_on_e2, 
+            'Eastbound direct VOL of the middle intersection': get_vol_on_e2,
+            'Eastbound direct JAMLEN of the middle intersection': get_jam_length_on_e2,
+
+            'Eastbound left OCC of the middle intersection': get_occ_on_e2,
+            'Eastbound left SPEED of the middle intersection': get_speed_on_e2, 
+            'Eastbound left VOL of the middle intersection': get_vol_on_e2,
+            'Eastbound left JAMLEN of the middle intersection': get_jam_length_on_e2,
+          }
+          paras: {
+            'Northbound direct OCC of the middle intersection': 'fukanglu_north_entry2',
+            'Northbound direct SPEED of the middle intersection': 'fukanglu_north_entry2', 
+            'Northbound direct VOL of the middle intersection': 'fukanglu_north_entry2',
+            'Northbound direct JAMLEN of the middle intersection': 'fukanglu_north_entry2',
+
+            'Northbound left OCC of the middle intersection': 'fukanglu_north_entry3',
+            'Northbound left SPEED of the middle intersection': 'fukanglu_north_entry3', 
+            'Northbound left VOL of the middle intersection': 'fukanglu_north_entry3',
+            'Northbound left JAMLEN of the middle intersection': 'fukanglu_north_entry3',
+
+            'Southbound direct OCC of the middle intersection': 'fukanglu_south_entry2',
+            'Southbound direct SPEED of the middle intersection': 'fukanglu_south_entry2', 
+            'Southbound direct VOL of the middle intersection': 'fukanglu_south_entry2',
+            'Southbound direct JAMLEN of the middle intersection': 'fukanglu_south_entry2',
+
+            'Southbound left OCC of the middle intersection': 'fukanglu_south_entry3',
+            'Southbound left SPEED of the middle intersection': 'fukanglu_south_entry3', 
+            'Southbound left VOL of the middle intersection': 'fukanglu_south_entry3',
+            'Southbound left JAMLEN of the middle intersection': 'fukanglu_south_entry3',
+
+            'Westbound direct OCC of the middle intersection': 'yuanlinlu_west_mid_entry2',
+            'Westbound direct SPEED of the middle intersection': 'yuanlinlu_west_mid_entry2', 
+            'Westbound direct VOL of the middle intersection': 'yuanlinlu_west_mid_entry2',
+            'Westbound direct JAMLEN of the middle intersection': 'yuanlinlu_west_mid_entry2',
+
+            'Westbound left OCC of the middle intersection': 'yuanlinlu_west_mid_entry3',
+            'Westbound left SPEED of the middle intersection': 'yuanlinlu_west_mid_entry3', 
+            'Westbound left VOL of the middle intersection': 'yuanlinlu_west_mid_entry3',
+            'Westbound left JAMLEN of the middle intersection': 'yuanlinlu_west_mid_entry3',
+
+            'Eastbound direct OCC of the middle intersection': 'yuanlinlu_east_mid_exit2',
+            'Eastbound direct SPEED of the middle intersection': 'yuanlinlu_east_mid_exit2', 
+            'Eastbound direct VOL of the middle intersection': 'yuanlinlu_east_mid_exit2',
+            'Eastbound direct JAMLEN of the middle intersection': 'yuanlinlu_east_mid_exit2',
+
+            'Eastbound left OCC of the middle intersection': 'yuanlinlu_east_mid_exit3',
+            'Eastbound left SPEED of the middle intersection': 'yuanlinlu_east_mid_exit3', 
+            'Eastbound left VOL of the middle intersection': 'yuanlinlu_east_mid_exit3',
+            'Eastbound left JAMLEN of the middle intersection': 'yuanlinlu_east_mid_exit3',  
+
+          }
+      actions:
+          names: [ 'Switch to control scheme 0','Switch to control scheme 1',
+                   'Switch to control scheme 2','Switch to control scheme 3',
+                   'Switch to control scheme 4','Switch to control scheme 5',
+                   'Switch to control scheme 6','Switch to control scheme 7',
+                   'Switch to control scheme 8',
+              ]
+          func_names: {
+              'Switch to control scheme 0': switch_to_tls_program, 
+              'Switch to control scheme 1': switch_to_tls_program,
+              'Switch to control scheme 2': switch_to_tls_program,
+              'Switch to control scheme 3': switch_to_tls_program,
+              'Switch to control scheme 4': switch_to_tls_program,
+              'Switch to control scheme 5': switch_to_tls_program,
+              'Switch to control scheme 6': switch_to_tls_program,
+              'Switch to control scheme 7': switch_to_tls_program,
+              'Switch to control scheme 8': switch_to_tls_program,
+          }
+          paras: {
+              'Switch to control scheme 0': ['J3', 'tp_0', 145], # Multiple tlsIDs, control scheme IDs, cycle lengths
+              'Switch to control scheme 1': ['J3', 'tp_1', 175],
+              'Switch to control scheme 2': ['J3', 'tp_2', 190],
+              'Switch to control scheme 3': ['J3', 'tp_3', 240],
+              'Switch to control scheme 4': ['J3', 'tp_4', 190],
+              'Switch to control scheme 5': ['J3', 'tp_5', 250],
+              'Switch to control scheme 6': ['J3', 'tp_6', 160],
+              'Switch to control scheme 7': ['J3', 'tp_7', 200],
+              'Switch to control scheme 8': ['J3', 'tp_8', 200],
+          }
+      rewards:
+          names: 'Total Delay at Intersection
+'
+          func_names: {
+              'Total Delay at Intersection
+': get_interval_time_loss_on_e3_as_reward
+          }
+          paras: {
+              'Total Delay at Intersection
+': 'MID_e3_det'              
+          }
+
+    J6:
+      id: J6
+      cross_ids: J6
+      tls_ids: J6
+      states:
+          names: [
+            'Northbound direct-left OCC of the right intersection','Northbound direct-left SPEED of the right intersection','Northbound direct-left VOL of the right intersection','Northbound direct-left JAMLEN of the right intersection',
+            'Southbound direct-left OCC of the right intersection','Southbound direct-left SPEED of the right intersection','Southbound direct-left VOL of the right intersection','Southbound direct-left JAMLEN of the right intersection',
+            'Westbound direct OCC of the right intersection','Westbound direct SPEED of the right intersection','Westbound direct VOL of the right intersection','Westbound direct JAMLEN of the right intersection',
+            'Westbound left OCC of the right intersection','Westbound left SPEED of the right intersection','Westbound left VOL of the right intersection','Westbound left JAMLEN of the right intersection',
+            'Eastbound direct OCC of the right intersection','Eastbound direct SPEED of the right intersection','Eastbound direct VOL of the right intersection','Eastbound direct JAMLEN of the right intersection',
+            'Eastbound left VOL of the right intersection','Eastbound left SPEED of the right intersection','Eastbound left VOL of the right intersection','Eastbound left JAMLEN of the right intersection',
+          ]
+          func_names: {
+            'Northbound direct-left OCC of the right intersection': get_occ_on_e2,
+            'Northbound direct-left SPEED of the right intersection': get_speed_on_e2, 
+            'Northbound direct-left VOL of the right intersection': get_vol_on_e2,
+            'Northbound direct-left JAMLEN of the right intersection': get_jam_length_on_e2,
+
+            'Southbound direct-left OCC of the right intersection': get_occ_on_e2,
+            'Southbound direct-left SPEED of the right intersection': get_speed_on_e2, 
+            'Southbound direct-left VOL of the right intersection': get_vol_on_e2,
+            'Southbound direct-left JAMLEN of the right intersection': get_jam_length_on_e2,
+
+            'Westbound direct OCC of the right intersection': get_occ_on_e2,
+            'Westbound direct SPEED of the right intersection': get_speed_on_e2, 
+            'Westbound direct VOL of the right intersection': get_vol_on_e2,
+            'Westbound direct JAMLEN of the right intersection': get_jam_length_on_e2,
+           
+            'Westbound left OCC of the right intersection': get_occ_on_e2,
+            'Westbound left SPEED of the right intersection': get_speed_on_e2, 
+            'Westbound left VOL of the right intersection': get_vol_on_e2,
+            'Westbound left JAMLEN of the right intersection': get_jam_length_on_e2,
+
+            'Eastbound direct OCC of the right intersection': get_occ_on_e2,
+            'Eastbound direct SPEED of the right intersection': get_speed_on_e2, 
+            'Eastbound direct VOL of the right intersection': get_vol_on_e2,
+            'Eastbound direct JAMLEN of the right intersection': get_jam_length_on_e2,
+
+            'Eastbound left VOL of the right intersection': get_occ_on_e2,
+            'Eastbound left SPEED of the right intersection': get_speed_on_e2, 
+            'Eastbound left VOL of the right intersection': get_vol_on_e2,
+            'Eastbound left JAMLEN of the right intersection': get_jam_length_on_e2,
+          }
+          paras: {
+            'Northbound direct-left OCC of the right intersection': 'feitianlu_north_entry2',
+            'Northbound direct-left SPEED of the right intersection': 'feitianlu_north_entry2', 
+            'Northbound direct-left VOL of the right intersection': 'feitianlu_north_entry2',
+            'Northbound direct-left JAMLEN of the right intersection': 'feitianlu_north_entry2',
+
+            'Southbound direct-left OCC of the right intersection': 'feitianlu_south_entry2',
+            'Southbound direct-left SPEED of the right intersection': 'feitianlu_south_entry2', 
+            'Southbound direct-left VOL of the right intersection': 'feitianlu_south_entry2',
+            'Southbound direct-left JAMLEN of the right intersection': 'feitianlu_south_entry2',
+
+            'Westbound direct OCC of the right intersection': 'yuanlinlu_east_mid_exit2',
+            'Westbound direct SPEED of the right intersection': 'yuanlinlu_east_mid_exit2', 
+            'Westbound direct VOL of the right intersection': 'yuanlinlu_east_mid_exit2',
+            'Westbound direct JAMLEN of the right intersection': 'yuanlinlu_east_mid_exit2',
+
+            'Westbound left OCC of the right intersection': 'yuanlinlu_east_mid_exit3',
+            'Westbound left SPEED of the right intersection': 'yuanlinlu_east_mid_exit3', 
+            'Westbound left VOL of the right intersection': 'yuanlinlu_east_mid_exit3',
+            'Westbound left JAMLEN of the right intersection': 'yuanlinlu_east_mid_exit3',
+
+            'Eastbound direct OCC of the right intersection': 'yuanlinlu_east_entry2',
+            'Eastbound direct SPEED of the right intersection': 'yuanlinlu_east_entry2', 
+            'Eastbound direct VOL of the right intersection': 'yuanlinlu_east_entry2',
+            'Eastbound direct JAMLEN of the right intersection': 'yuanlinlu_east_entry2',
+
+            'Eastbound left VOL of the right intersection': 'yuanlinlu_east_entry3',
+            'Eastbound left SPEED of the right intersection': 'yuanlinlu_east_entry3', 
+            'Eastbound left VOL of the right intersection': 'yuanlinlu_east_entry3',
+            'Eastbound left JAMLEN of the right intersection': 'yuanlinlu_east_entry3',  
+
+          }
+      actions:
+          names: [ 'Switch to control scheme 0','Switch to control scheme 1',
+                   'Switch to control scheme 2','Switch to control scheme 3',
+                   'Switch to control scheme 4','Switch to control scheme 5',
+                   'Switch to control scheme 6','Switch to control scheme 7',
+                   'Switch to control scheme 8',
+              ]
+          func_names: {
+              'Switch to control scheme 0': switch_to_tls_program, 
+              'Switch to control scheme 1': switch_to_tls_program,
+              'Switch to control scheme 2': switch_to_tls_program,
+              'Switch to control scheme 3': switch_to_tls_program,
+              'Switch to control scheme 4': switch_to_tls_program,
+              'Switch to control scheme 5': switch_to_tls_program,
+              'Switch to control scheme 6': switch_to_tls_program,
+              'Switch to control scheme 7': switch_to_tls_program,
+              'Switch to control scheme 8': switch_to_tls_program,
+          }
+          paras: {
+              'Switch to control scheme 0': ['J6', 'tp_0', 145], # tlsID, control scheme ID, cycle length
+              'Switch to control scheme 1': ['J6', 'tp_1', 175],
+              'Switch to control scheme 2': ['J6', 'tp_2', 190],
+              'Switch to control scheme 3': ['J6', 'tp_3', 240],
+              'Switch to control scheme 4': ['J6', 'tp_4', 190],
+              'Switch to control scheme 5': ['J6', 'tp_5', 250],
+              'Switch to control scheme 6': ['J6', 'tp_6', 160],
+              'Switch to control scheme 7': ['J6', 'tp_7', 200],
+              'Switch to control scheme 8': ['J6', 'tp_8', 200],
+          }
+      rewards:
+          names: 'Total Delay at Intersection
+'
+          func_names: {
+              'Total Delay at Intersection
+': get_interval_time_loss_on_e3_as_reward
+          }
+          paras: {
+              'Total Delay at Intersection
+': 'RIGHT_e3_det'              
+          }

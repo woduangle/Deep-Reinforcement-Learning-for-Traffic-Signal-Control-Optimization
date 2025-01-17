@@ -1,0 +1,20 @@
+Loading net-file from 'C:\school\study\DRL2.0-2024\2024\Actor-Critic(AC)_boltzmann\sumo_network\example42.net.xml' ... done (57ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\Actor-Critic(AC)_boltzmann\sumo_network\busstops_def.add.xml' ... done (72ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\Actor-Critic(AC)_boltzmann\sumo_network\det_e3.add.xml' ... done (20ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\Actor-Critic(AC)_boltzmann\sumo_network\det_e2.add.xml' ... done (18ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\Actor-Critic(AC)_boltzmann\sumo_network\edgelane_dump.add.xml' ... done (17ms).
+Loading additional-files from 'C:\school\study\DRL2.0-2024\2024\Actor-Critic(AC)_boltzmann\sumo_network\signal-timing-dial.xml' ... done (48ms).
+Loading done.
+Simulation ended at time: 0.00
+Performance: 
+ Duration: 2758.06s
+ Real time factor: 0
+ UPS: 0.000000
+Vehicles: 
+ Inserted: 0 (Loaded: 9)
+ Running: 0
+ Waiting: 0
+Persons: 
+ Inserted: 590
+ Running: 0
+
