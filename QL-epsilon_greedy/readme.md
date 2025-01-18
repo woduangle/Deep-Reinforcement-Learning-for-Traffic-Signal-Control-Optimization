@@ -88,7 +88,6 @@ Total the differences between total incoming lanes density and total outgoing la
 
 
 ### 4. Results
-
   
 ### 5. Conclusions 
 In this report, we compared 5 algorithms on 6 metrics and showed the effectiveness of the training process. The graphs show that the performance of the algorithms depends greatly on the number of cars at a time, or in other words, the environment is not stable. In addition, the results also show that although the Q-Learning algorithm is simple, it gives completely superior results. The advantage of the Q-Learning algorithm is that it is simple, easy to understand, easy to implement, compact, and suitable for problems with a small number of states. These strengths will help Q-Learning be easily applied to solve the TSC problem.
