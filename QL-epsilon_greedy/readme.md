@@ -53,15 +53,6 @@ where: $Q^\pi(s, a)$ is the Q-value predicted by the deep neural network.
 
 - Despite the strength of DQN, it often brings over-optimistic results which would end up with early convergence to (bad) local optima. Later improvements on DQN, i.e., DoubleDQN, DuelingDQN, and D3QN, hence pay much attention to stabilizing DQN's results.
 
-#### Double Deep Q-Network
-- *Double Deep Q-Network* (DoubleDQN), which is a deep learning-based improvement from the original DQN and Q-Learning, uses an additional network called $\phi$-network to reduce over-estimations and strengthen performance on many different environments. The formulation of DoubleDQN is demonstrated as in Equation:
-
-$$
-    \overset{ {\color{orange}\pi \text{ network}}} {\overbrace{Q^\pi(s,a)}} = \mathcal{R} + \gamma \text{ } \underset{{\color{red} \phi \text{ network}}}{\underbrace{ Q^\phi\left(s', \underset{a'}{\max}Q^\pi(s',a')\right)}}
-$$
-
-- Dueling Deep Q-Network (DuelingDQN) is presented to use a dueling architecture which explicitly separates the representation of state values and state-dependent action advantages via two separate streams as demonstrated
-
   
 ### 3. Experiments
 
