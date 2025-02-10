@@ -20,7 +20,7 @@ $$
 \theta_{\text{actor}} \leftarrow \theta_{\text{actor}} + \alpha \nabla_\theta \log \pi_\theta(a|s) A(s,a)
 $$
 
-Here, $ \alpha \$ represents the learning rate, \( \pi_{\theta}(a|s) \) denotes the probability distribution of taking action \( a \) given state \( s \), and \( A(s,a) \) is the advantage function that measures how much better it is to take action \( a \) compared to average behavior.
+Here, $ alpha $ represents the learning rate, \( \pi_{\theta}(a|s) \) denotes the probability distribution of taking action \( a \) given state \( s \), and \( A(s,a) \) is the advantage function that measures how much better it is to take action \( a \) compared to average behavior.
 
 
 #### Value function update rule
