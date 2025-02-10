@@ -29,7 +29,7 @@ $$
 \theta_{\text{critic}} \leftarrow \theta_{\text{critic}} + \beta (R - V_\theta(s)) \nabla_\theta V_\theta(s)
 $$
 
-Where $β$ is the learning rate, R is the reward, and $V_θ(s)$ is the value function indicating the expected return starting from state s following policy.
+Where $β$ is the learning rate, $R$ is the reward, and $V_θ(s)$ is the value function indicating the expected return starting from state s following policy.
 
 ### 5. Conclusions 
 When applying A3C to traffic signal control within SUMO, different agents can be set for various intersections. These agents use SUMO's API to obtain real-time traffic data (such as vehicle waiting times, queue lengths, etc.) as input states. Based on this information, agents decide when to switch the traffic light colors aiming to minimize total waiting time and optimize traffic flow. SUMO allows simulating complex traffic scenarios, enabling the A3C model to train and test under conditions close to the real world.
