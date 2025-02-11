@@ -93,7 +93,7 @@ Here, $$h_1$$ and $$h_2$$ represent the outputs of the hidden layers. $$f$$ deno
 This formula represents the mechanism of sampling mini-batches of past experiences from a replay buffer, breaking correlations between consecutive samples to stabilize training.
 
 $$
-\text{Mini-batch} = \{(s_i, a_i, r_i, s'_i, \text{done}_i)\}_{i=1}^N
+\text{Mini-batch} = \{(s_i, a_i, r_i, s'_i, \text{done}_i) | i=1,2,...,N\}
 $$
 
 Here, $$s_i$$ represents the state at time step $$i$$. $$a_i$$ denotes the action taken at time step $$i$$. $$r_i$$ is the reward received after taking action $$a_i$$ in state $$s_i$$. $$s'_i$$ represents the next state after taking action $$a_i$$. $$\text{done}_i$$ is a flag indicating whether the episode ended at time step $$i$$. $$N$$ denotes the batch size, representing the number of samples drawn from the replay buffer.
