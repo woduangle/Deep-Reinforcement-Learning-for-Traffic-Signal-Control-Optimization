@@ -28,7 +28,7 @@ Here, $$Q(s, a)$$ represents the Q-value function measuring the expected cumulat
 
 - #### Epsilon-Greedy Action Selection
 
-This formula balances exploration and exploitation by selecting actions either randomly (with probability ϵ) or based on the highest Q-value (with probability 1−ϵ).
+This formula balances exploration and exploitation by selecting actions either randomly (with probability $$ϵ$$) or based on the highest Q-value (with probability 1−$$ϵ$$).
 
 $$
 a =
