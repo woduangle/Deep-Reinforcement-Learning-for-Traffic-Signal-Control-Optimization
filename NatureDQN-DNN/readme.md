@@ -11,69 +11,87 @@
 
 ---
 ### 1. Introduction 
-- A3C is a combination of the Actor-Critic framework with asynchronous training mechanisms, offering an advanced deep reinforcement learning algorithm. The core idea is to accelerate the learning process and enhance stability by having multiple parallel worker threads interact with the environment and update shared neural network parameters concurrently. Each thread independently executes policies, collects experiences, and updates weights to the global network at certain intervals. This method not only effectively avoids high variance issues common in traditional reinforcement learning but also significantly speeds up the learning process.
+
+- NatureDQN-DNN is a deep reinforcement learning algorithm that combines Q-learning with deep neural networks (DNNs) to approximate the Q-value function for high-dimensional inputs, such as images. It employs experience replay to stabilize training by reducing correlations between samples and uses a target network to provide stable Q-value targets. The DNN architecture typically includes convolutional layers for feature extraction and fully connected layers for decision-making. By addressing instability in Q-learning, NatureDQN-DNN achieves human-level performance in complex tasks like Atari games. This approach bridges deep learning and reinforcement learning, paving the way for advanced RL algorithms. Its success highlights the potential of deep neural networks in solving high-dimensional control problems.
 
 ### 2. Method 
 
-- #### Actor's Objective Function
+- #### Q-Learning Update Rule
 
 The Actor's objective function combines the policy gradient loss and entropy regularization to optimize the policy. It maximizes the expected advantage while encouraging exploration through entropy.
 
 $$
-L_{\text{actor}} = \mathbb{E} \left[ \log \pi(a_t | s_t; \theta) A(s_t, a_t) - \beta H(\pi(s_t; \theta)) \right]
+Q(s, a) \leftarrow r + \gamma \cdot \max_{a'} Q'(s', a')
 $$
 
-Here, $$L_{\text{actor}}$$ is the objective function for the Actor. $$\pi(a_t | s_t; \theta)$$ denotes the probability distribution of taking action $$a_t$$ given state $$s_t$$. $$A(s_t, a_t)$$ is the advantage function that measures how much better it is to take action $$a_t$$. $$\beta$$ is the entropy regularization coefficient, and $$H(\pi(s_t; \theta))$$ is the entropy of the policy, encouraging exploration.
+Here, $$Q(s, a)$$ represents the Q-value function measuring the expected cumulative reward for taking action $$a$$ in state $$s$$. $$r$$ denotes the immediate reward received after taking action $$a$$ in state $$s$$. $$\gamma$$ is the discount factor controlling the importance of future rewards ($$0 \leq \gamma \leq 1$$). $$Q'(s', a')$$ is the target Q-value for the next state $$s'$$ and action $$a'$$, estimated by the target network.
 
-- #### Critic's Mean Squared Error Loss
+- #### Epsilon-Greedy Action Selection
 
 The Critic's loss function measures the difference between the predicted state value and the n-step TD target. It minimizes the mean squared error to improve the accuracy of the value function estimation.
 
 $$
-L_{\text{critic}} = \mathbb{E} \left[ (R_t - V(s_t))^2 \right]
+a =
+\begin{cases}
+\text{random action}, & \text{with probability } \epsilon \\
+\arg\max_a Q(s, a), & \text{with probability } 1 - \epsilon
 $$
 
-Here, $$L_{\text{critic}}$$ is the loss function for the Critic. $$R_t$$ is the n-step TD target, representing the discounted cumulative reward starting from state $$s_t$$. $$V(s_t)$$ is the predicted value of state $$s_t$$ by the Critic model.
+Here, $$a$$ represents the selected action. $$\epsilon$$ denotes the exploration rate, which controls the probability of selecting a random action ($$0 \leq \epsilon \leq 1$$). $$Q(s, a)$$ is the Q-value function that measures the expected cumulative reward for taking action $$a$$ in state $$s$$.
 
-- #### n-step TD Target
+
+- #### Target Network Update
 
 The n-step TD target calculates the discounted cumulative reward starting from the current state, incorporating both immediate rewards and the estimated value of future states.
 
 $$
-R_t = r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \dots + \gamma^n V(s_{t+n})
+\theta' \leftarrow \theta
 $$
 
-Here, $$R_t$$ is the n-step TD target. $$r_t, r_{t+1}, \dots$$ are the immediate rewards at the current and future steps. $$\gamma$$ is the discount factor controlling the importance of future rewards. $$V(s_{t+n})$$ is the estimated value of state $$s_{t+n}$$.
+Here, $$\theta$$ represents the weights of the main Q-network. $$\theta'$$ denotes the weights of the target Q-network, which are periodically updated to match the main network's weights.
 
-- #### Advantage Function
-
-The advantage function quantifies how much better it is to take a specific action compared to the average behavior. It is computed as the difference between the n-step TD target and the predicted state value.
-
-$$
-A(s_t, a_t) = R_t - V(s_t)
-$$
-
-Here, $$A(s_t, a_t)$$ is the advantage function measuring how much better it is to take action $$a_t$$. $$R_t$$ is the n-step TD target. $$V(s_t)$$ is the predicted value of state $$s_t$$ by the Critic model.
-
-- #### Policy Gradient Update Rule
+- #### Loss Function
 
 The policy gradient update rule adjusts the policy parameters by following the gradient of the log-probability of actions weighted by their advantages. This ensures that actions with higher advantages are more likely to be chosen in the future.
 
 $$
-\theta_{\text{actor}} \leftarrow \theta_{\text{actor}} + \alpha \nabla_\theta \log \pi_\theta(a|s) A(s,a)
+L(\theta) = \mathbb{E} \left[ \left( r + \gamma \cdot \max_{a'} Q'(s', a'; \theta') - Q(s, a; \theta) \right)^2 \right]
 $$
 
-Here, $$\alpha$$ represents the learning rate, $$\pi_\theta(a|s)$$ denotes the probability distribution of taking action $$a$$ given state $$s$$, and $$A(s,a)$$ is the advantage function that measures how much better it is to take action $$a$$ compared to average behavior.
+Here, $$L(\theta)$$ represents the loss function used to optimize the neural network. $$r$$ denotes the immediate reward received after taking an action. $$\gamma$$ is the discount factor ($$0 \leq \gamma \leq 1$$). $$Q'(s', a'; \theta')$$ is the target Q-value predicted by the target network. $$Q(s, a; \theta)$$ is the Q-value predicted by the main network.
 
-- #### Entropy Regularization Term
+
+- #### Epsilon Decay
 
 The entropy regularization term encourages exploration by penalizing deterministic policies. It measures the uncertainty or randomness of the policy distribution, promoting a balance between exploitation and exploration.
 
 $$
-H(\pi(s_t; \theta)) = -\sum_a \pi(a | s_t; \theta) \log \pi(a | s_t; \theta)
+\epsilon \leftarrow \epsilon \cdot \epsilon_{\text{decay}}
 $$
 
-Here, $$H(\pi(s_t; \theta))$$ is the entropy of the policy. $$\pi(a | s_t; \theta)$$ denotes the probability distribution of taking action $$a$$ given state $$s_t$$. $$a$$ is an action in the action space.
+Here, $$\epsilon$$ represents the exploration rate, which decreases over time. $$\epsilon_{\text{decay}}$$ denotes the decay factor, controlling how quickly $$\epsilon$$ decreases ($$0 < \epsilon_{\text{decay}} < 1$$).
+
+- #### Neural Network Architecture
+
+The entropy regularization term encourages exploration by penalizing deterministic policies. It measures the uncertainty or randomness of the policy distribution, promoting a balance between exploitation and exploration.
+
+$$
+h_1 &= f(W_1 \cdot x + b_1) \\
+h_2 &= f(W_2 \cdot h_1 + b_2) \\
+Q(s, a) &= W_3 \cdot h_2 + b_3
+$$
+
+Here, $$h_1$$ and $$h_2$$ represent the outputs of the hidden layers. $$f$$ denotes the activation function (e.g., ReLU or sigmoid). $$W_1$$, $$W_2$$, and $$W_3$$ are the weight matrices for each layer. $$b_1$$, $$b_2$$, and $$b_3$$ denote the bias terms for each layer. $$x$$ is the input vector (state representation). $$Q(s, a)$$ is the output Q-values for each action.
+
+- #### Experience Replay
+
+The entropy regularization term encourages exploration by penalizing deterministic policies. It measures the uncertainty or randomness of the policy distribution, promoting a balance between exploitation and exploration.
+
+$$
+\text{Mini-batch} = \{(s_i, a_i, r_i, s'_i, \text{done}_i)\}_{i=1}^N
+$$
+
+Here, $$s_i$$ represents the state at time step $$i$$. $$a_i$$ denotes the action taken at time step $$i$$. $$r_i$$ is the reward received after taking action $$a_i$$ in state $$s_i$$. $$s'_i$$ represents the next state after taking action $$a_i$$. $$\text{done}_i$$ is a flag indicating whether the episode ended at time step $$i$$. $$N$$ denotes the batch size, representing the number of samples drawn from the replay buffer.
 
 
 ### 5. Conclusions 
