@@ -18,7 +18,7 @@
 
 - #### Q-Learning Update Rule
 
-The Actor's objective function combines the policy gradient loss and entropy regularization to optimize the policy. It maximizes the expected advantage while encouraging exploration through entropy.
+This formula updates the Q-value for a state-action pair using the Bellman equation, combining the immediate reward and the discounted future reward estimated by the target network.
 
 $$
 Q(s, a) \leftarrow r + \gamma \cdot \max_{a'} Q'(s', a')
@@ -28,13 +28,10 @@ Here, $$Q(s, a)$$ represents the Q-value function measuring the expected cumulat
 
 - #### Epsilon-Greedy Action Selection
 
-The Critic's loss function measures the difference between the predicted state value and the n-step TD target. It minimizes the mean squared error to improve the accuracy of the value function estimation.
+This formula balances exploration and exploitation by selecting actions either randomly (with probability ϵ) or based on the highest Q-value (with probability 1−ϵ).
 
 $$
-a =
-\begin{cases}
-\text{random action}, & \text{with probability } \epsilon \\
-\arg\max_a Q(s, a), & \text{with probability } 1 - \epsilon
+a =\begin{cases}\text{random action}, & \text{with probability } \epsilon \\\arg\max_a Q(s, a), & \text{with probability } 1 - \epsilon
 $$
 
 Here, $$a$$ represents the selected action. $$\epsilon$$ denotes the exploration rate, which controls the probability of selecting a random action ($$0 \leq \epsilon \leq 1$$). $$Q(s, a)$$ is the Q-value function that measures the expected cumulative reward for taking action $$a$$ in state $$s$$.
@@ -42,7 +39,7 @@ Here, $$a$$ represents the selected action. $$\epsilon$$ denotes the exploration
 
 - #### Target Network Update
 
-The n-step TD target calculates the discounted cumulative reward starting from the current state, incorporating both immediate rewards and the estimated value of future states.
+This formula periodically updates the weights of the target network to match those of the main Q-network, ensuring stable training by providing consistent Q-value targets.
 
 $$
 \theta' \leftarrow \theta
@@ -52,7 +49,7 @@ Here, $$\theta$$ represents the weights of the main Q-network. $$\theta'$$ denot
 
 - #### Loss Function
 
-The policy gradient update rule adjusts the policy parameters by following the gradient of the log-probability of actions weighted by their advantages. This ensures that actions with higher advantages are more likely to be chosen in the future.
+This formula defines the loss function used to train the neural network, minimizing the difference between the predicted Q-values and the target Q-values computed using the Bellman equation.
 
 $$
 L(\theta) = \mathbb{E} \left[ \left( r + \gamma \cdot \max_{a'} Q'(s', a'; \theta') - Q(s, a; \theta) \right)^2 \right]
@@ -63,7 +60,7 @@ Here, $$L(\theta)$$ represents the loss function used to optimize the neural net
 
 - #### Epsilon Decay
 
-The entropy regularization term encourages exploration by penalizing deterministic policies. It measures the uncertainty or randomness of the policy distribution, promoting a balance between exploitation and exploration.
+This formula reduces the exploration rate ϵ over time, gradually shifting the algorithm's focus from exploration to exploitation as training progresses.
 
 $$
 \epsilon \leftarrow \epsilon \cdot \epsilon_{\text{decay}}
@@ -73,19 +70,16 @@ Here, $$\epsilon$$ represents the exploration rate, which decreases over time. $
 
 - #### Neural Network Architecture
 
-The entropy regularization term encourages exploration by penalizing deterministic policies. It measures the uncertainty or randomness of the policy distribution, promoting a balance between exploitation and exploration.
+This formula describes the forward propagation process in a multi-layer neural network, transforming input states into Q-values through hidden layers with activation functions.
 
-$$
-h_1 &= f(W_1 \cdot x + b_1) \\
-h_2 &= f(W_2 \cdot h_1 + b_2) \\
-Q(s, a) &= W_3 \cdot h_2 + b_3
+$$h_1 &= f(W_1 \cdot x + b_1) \\h_2 &= f(W_2 \cdot h_1 + b_2) \\Q(s, a) &= W_3 \cdot h_2 + b_3
 $$
 
 Here, $$h_1$$ and $$h_2$$ represent the outputs of the hidden layers. $$f$$ denotes the activation function (e.g., ReLU or sigmoid). $$W_1$$, $$W_2$$, and $$W_3$$ are the weight matrices for each layer. $$b_1$$, $$b_2$$, and $$b_3$$ denote the bias terms for each layer. $$x$$ is the input vector (state representation). $$Q(s, a)$$ is the output Q-values for each action.
 
 - #### Experience Replay
 
-The entropy regularization term encourages exploration by penalizing deterministic policies. It measures the uncertainty or randomness of the policy distribution, promoting a balance between exploitation and exploration.
+This formula represents the mechanism of sampling mini-batches of past experiences from a replay buffer, breaking correlations between consecutive samples to stabilize training.
 
 $$
 \text{Mini-batch} = \{(s_i, a_i, r_i, s'_i, \text{done}_i)\}_{i=1}^N
