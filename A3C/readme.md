@@ -15,9 +15,9 @@
 
 ### 2. Method 
 
-#### Actor's Objective Function
+- #### Actor's Objective Function
 
-- The Actor's objective function combines the policy gradient loss and entropy regularization to optimize the policy. It maximizes the expected advantage while encouraging exploration through entropy.
+The Actor's objective function combines the policy gradient loss and entropy regularization to optimize the policy. It maximizes the expected advantage while encouraging exploration through entropy.
 
 $$
 L_{\text{actor}} = \mathbb{E} \left[ \log \pi(a_t | s_t; \theta) A(s_t, a_t) - \beta H(\pi(s_t; \theta)) \right]
