@@ -31,7 +31,11 @@ Here, $$Q(s, a)$$ represents the Q-value function measuring the expected cumulat
 This formula balances exploration and exploitation by selecting actions either randomly (with probability ϵ) or based on the highest Q-value (with probability 1−ϵ).
 
 $$
-a =\begin{cases}\text{random action}, & \text{with probability } \epsilon \\\arg\max_a Q(s, a), & \text{with probability } 1 - \epsilon
+a =
+\begin{cases} 
+\text{random action}, & \text{with probability } \epsilon \\
+\arg\max_a Q(s, a), & \text{with probability } 1 - \epsilon
+\end{cases}
 $$
 
 Here, $$a$$ represents the selected action. $$\epsilon$$ denotes the exploration rate, which controls the probability of selecting a random action ($$0 \leq \epsilon \leq 1$$). $$Q(s, a)$$ is the Q-value function that measures the expected cumulative reward for taking action $$a$$ in state $$s$$.
@@ -72,7 +76,14 @@ Here, $$\epsilon$$ represents the exploration rate, which decreases over time. $
 
 This formula describes the forward propagation process in a multi-layer neural network, transforming input states into Q-values through hidden layers with activation functions.
 
-$$h_1 &= f(W_1 \cdot x + b_1) \\h_2 &= f(W_2 \cdot h_1 + b_2) \\Q(s, a) &= W_3 \cdot h_2 + b_3
+$$
+h_1 = f(W_1 \cdot x + b_1)
+$$
+$$
+h_2 = f(W_2 \cdot h_1 + b_2)
+$$
+$$
+Q(s, a) = W_3 \cdot h_2 + b_3
 $$
 
 Here, $$h_1$$ and $$h_2$$ represent the outputs of the hidden layers. $$f$$ denotes the activation function (e.g., ReLU or sigmoid). $$W_1$$, $$W_2$$, and $$W_3$$ are the weight matrices for each layer. $$b_1$$, $$b_2$$, and $$b_3$$ denote the bias terms for each layer. $$x$$ is the input vector (state representation). $$Q(s, a)$$ is the output Q-values for each action.
