@@ -26,6 +26,8 @@ $$
 
 Here, $$Q(s, a)$$ represents the Q-value function measuring the expected cumulative reward for taking action $$a$$ in state $$s$$. $$r$$ denotes the immediate reward received after taking action $$a$$ in state $$s$$. $$\gamma$$ is the discount factor controlling the importance of future rewards ($$0 \leq \gamma \leq 1$$). $$Q'(s', a')$$ is the target Q-value for the next state $$s'$$ and action $$a'$$, estimated by the target network.
 
+---
+
 - #### Epsilon-Greedy Action Selection
 
 This formula balances exploration and exploitation by selecting actions either randomly (with probability $$ϵ$$) or based on the highest Q-value (with probability $$1−ϵ$$).
@@ -40,6 +42,7 @@ $$
 
 Here, $$a$$ represents the selected action. $$\epsilon$$ denotes the exploration rate, which controls the probability of selecting a random action ($$0 \leq \epsilon \leq 1$$). $$Q(s, a)$$ is the Q-value function that measures the expected cumulative reward for taking action $$a$$ in state $$s$$.
 
+---
 
 - #### Target Network Update
 
@@ -51,6 +54,8 @@ $$
 
 Here, $$\theta$$ represents the weights of the main Q-network. $$\theta'$$ denotes the weights of the target Q-network, which are periodically updated to match the main network's weights.
 
+---
+
 - #### Loss Function
 
 This formula defines the loss function used to train the neural network, minimizing the difference between the predicted Q-values and the target Q-values computed using the Bellman equation.
@@ -61,6 +66,7 @@ $$
 
 Here, $$L(\theta)$$ represents the loss function used to optimize the neural network. $$r$$ denotes the immediate reward received after taking an action. $$\gamma$$ is the discount factor ($$0 \leq \gamma \leq 1$$). $$Q'(s', a'; \theta')$$ is the target Q-value predicted by the target network. $$Q(s, a; \theta)$$ is the Q-value predicted by the main network.
 
+---
 
 - #### Epsilon Decay
 
@@ -71,6 +77,8 @@ $$
 $$
 
 Here, $$\epsilon$$ represents the exploration rate, which decreases over time. $$\epsilon_{\text{decay}}$$ denotes the decay factor, controlling how quickly $$\epsilon$$ decreases ($$0 < \epsilon_{\text{decay}} < 1$$).
+
+---
 
 - #### Neural Network Architecture
 
@@ -88,6 +96,8 @@ $$
 
 Here, $$h_1$$ and $$h_2$$ represent the outputs of the hidden layers. $$f$$ denotes the activation function (e.g., ReLU or sigmoid). $$W_1$$, $$W_2$$, and $$W_3$$ are the weight matrices for each layer. $$b_1$$, $$b_2$$, and $$b_3$$ denote the bias terms for each layer. $$x$$ is the input vector (state representation). $$Q(s, a)$$ is the output Q-values for each action.
 
+---
+
 - #### Experience Replay
 
 This formula represents the mechanism of sampling mini-batches of past experiences from a replay buffer, breaking correlations between consecutive samples to stabilize training.
@@ -97,6 +107,8 @@ $$
 $$
 
 Here, $$s_i$$ represents the state at time step $$i$$. $$a_i$$ denotes the action taken at time step $$i$$. $$r_i$$ is the reward received after taking action $$a_i$$ in state $$s_i$$. $$s'_i$$ represents the next state after taking action $$a_i$$. $$\text{done}_i$$ is a flag indicating whether the episode ended at time step $$i$$. $$N$$ denotes the batch size, representing the number of samples drawn from the replay buffer.
+
+---
 
 
 ### 5. Conclusions 
