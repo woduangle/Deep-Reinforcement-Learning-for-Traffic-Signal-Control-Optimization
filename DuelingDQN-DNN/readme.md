@@ -24,7 +24,7 @@ $$
 Q(s, a; \theta) = V(s; \theta) + \left(A(s, a; \theta) - \frac{1}{|A|} \sum_{a'} A(s, a'; \theta)\right)
 $$
 
-Here, \( Q(s, a; \theta) \) represents the Q-value for taking action \( a \) in state \( s \). \( V(s; \theta) \) denotes the state value function, representing the overall value of state \( s \). \( A(s, a; \theta) \) is the advantage function, representing the relative advantage of action \( a \) compared to other actions. \( |A| \) is the total number of possible actions.
+Here, $$Q(s, a; \theta)$$ represents the Q-value for taking action $$a$$ in state $$s$$ . $$V(s; \theta)$$ denotes the state value function, representing the overall value of state $$s$$ . $$A(s, a; \theta)$$ is the advantage function, representing the relative advantage of action $$a$$ compared to other actions. $$|A|$$ is the total number of possible actions.
 
 ---
 
@@ -36,7 +36,7 @@ $$
 y_i = r + \gamma \max_{a'} Q(s', a'; \theta^-)
 $$
 
-Here, \( y_i \) represents the target Q-value. \( r \) denotes the immediate reward received after taking action \( a \) in state \( s \). \( \gamma \) is the discount factor controlling the importance of future rewards (\( 0 \leq \gamma \leq 1 \)). \( Q(s', a'; \theta^-) \) is the Q-value for the next state \( s' \) and action \( a' \), estimated by the target network.
+Here, $$y_i$$ represents the target Q-value. $$r$$ denotes the immediate reward received after taking action $$a$$ in state $$s$$ . $$\gamma$$ is the discount factor controlling the importance of future rewards ( $$0 \leq \gamma \leq 1$$ ). $$Q(s', a'; \theta^-)$$ is the Q-value for the next state $$s'$$ and action $$a'$$ , estimated by the target network.
 
 ---
 
@@ -47,7 +47,7 @@ $$
 L(\theta) = \mathbb{E} \left[ \left( y_i - Q(s, a; \theta) \right)^2 \right]
 $$
 
-Here, \( L(\theta) \) represents the loss function, measuring the error between predicted and target Q-values. \( y_i \) denotes the target Q-value computed using the Bellman equation. \( Q(s, a; \theta) \) is the predicted Q-value for state \( s \) and action \( a \).
+Here, $$L(\theta)$$ represents the loss function, measuring the error between predicted and target Q-values. $$y_i$$ denotes the target Q-value computed using the Bellman equation. $$Q(s, a; \theta)$$ is the predicted Q-value for state $$s$$ and action $$a$$ .
 
 ---
 
@@ -62,7 +62,7 @@ a =
 \end{cases}
 $$
 
-Here, \( a \) represents the selected action. \( \epsilon \) denotes the exploration rate, controlling the probability of random actions. \( Q(s, a; \theta) \) is the Q-value for state \( s \) and action \( a \), used to select the optimal action.
+Here, $$a$$ represents the selected action. $$\epsilon$$ denotes the exploration rate, controlling the probability of random actions. $$Q(s, a; \theta)$$ is the Q-value for state $$s$$ and action $$a$$ , used to select the optimal action.
 
 ---
 
@@ -73,7 +73,7 @@ $$
 \theta^- \leftarrow \tau \theta + (1 - \tau) \theta^-
 $$
 
-Here, \( \theta \) represents the parameters of the main network. \( \theta^- \) denotes the parameters of the target network. \( \tau \) is the interpolation factor, typically set to 1 for complete copying.
+Here, $$\theta$$ represents the parameters of the main network. $$\theta^-$$ denotes the parameters of the target network. $$\tau$$ is the interpolation factor, typically set to 1 for complete copying.
 
 ---
 
