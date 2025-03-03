@@ -36,24 +36,31 @@ $$
 - This section presents the **NSHG-DQN** algorithm, a multi-agent reinforcement learning algorithm based on the **Nash-Stackelberg Hierarchical Game Model**. NSHG-DQN is an algorithm that integrates **Deep Q-Learning (DQN)** with game theory to solve multi-intersection traffic signal control.
 - In a multi-agent environment, the Q-value function for each agent is defined as $Q_i^*(s_i, a_1, a_2, \dots, a_n)$, where $s_i$ is the local state of agent $ i $, and $ a_1, a_2, \dots, a_n $ are the joint actions of all agents. To achieve hierarchical game equilibrium, the algorithm replaces the traditional maximization operator with a **Nash equilibrium** and **Stackelberg equilibrium** based on game theory.
 
-#### Q-Value Update for P-Agent and S-Agent
+## Q-Value Update for P-Agent and S-Agent
 
-- In the **NSHG-DQN** algorithm, the Q-value for the P-Agent is updated based on the upper-level game equilibrium value $$V_{\text{al}}^t_i$$ , as follows:
+In the **NSHG-DQN** algorithm, the Q-value updates for the P-Agent and S-Agent are defined based on their respective game equilibrium values. Below are the details:
+
+### Q-Value Update for P-Agent
+The Q-value for the P-Agent is updated based on the upper-level game equilibrium value \(V_{\text{al}}^t_i\), as follows:
 
 $$
 Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_i \right]
 $$
-  where:  $$\alpha$$ is the learning rate, $$\gamma$$  is the discount factor,  $$r_t$$  is the immediate reward at time $$t$$,
-  
--  $$V_{\text{al}}^t_i$$ is the upper-level game equilibrium value of **P-Agent**.
 
-For the **S-Agent**, its Q-value update is based on the lower-level game equilibrium value  $$V_{\text{al}}^t_j$$ , as follows:
-    
+Where:
+- \(\alpha\) is the learning rate,
+- \(\gamma\) is the discount factor,
+- \(r_t\) is the immediate reward at time \(t\),
+- \(V_{\text{al}}^t_i\) is the upper-level game equilibrium value of the **P-Agent**.
+
+### Q-Value Update for S-Agent
+For the **S-Agent**, its Q-value update is based on the lower-level game equilibrium value \(V_{\text{al}}^t_j\), as follows:
+
 $$
 Q_j^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_j^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_j \right]
 $$
-    
-    where$$V_{\text{al}}^t_j$$ is the lower-level game equilibrium value of **S-Agent**.
+
+Where \(V_{\text{al}}^t_j\) is the lower-level game equilibrium value of the **S-Agent**.
 
 #### Computation of Equilibrium Values
 
