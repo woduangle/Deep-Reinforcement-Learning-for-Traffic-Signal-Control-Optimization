@@ -62,11 +62,11 @@ $$
 
 Where:
 
-- $$ \alpha  $$ is the learning rate,
-- $$ \gamma $$ is the discount factor,
-- $$ r_t $$ is the immediate reward,
-- $$ s_t' $$ is the next state,
-- $$\ a'_i $$ is the next action.
+- $$\alpha $$ is the learning rate,
+- $$\gamma$$ is the discount factor,
+- $$r_t$$ is the immediate reward,
+- $$s_t'$$ is the next state,
+- $$a'_i$$ is the next action.
 
 Compared to traditional Q-learning algorithms, the **MFQ-MLP** algorithm can handle multi-intersection coordination problems more effectively by combining Q-value decomposition and MLP. The Q-value decomposition allows each intersection to independently learn its own control strategy, while the MLP network improves learning ability and accuracy in high-dimensional environments, significantly improving the performance of traffic signal control.
 
