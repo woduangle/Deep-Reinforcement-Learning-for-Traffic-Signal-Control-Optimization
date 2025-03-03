@@ -9,6 +9,7 @@
 
 --- 
 
+
 ### 1. **Introduction**
 
 With the development of intelligent transportation systems and autonomous driving technologies, achieving coordinated control between multiple intersections to improve traffic efficiency and safety has become an important research topic. Existing traffic signal control methods often rely on fixed green light cycles and signal cycle maximization, lacking adaptability to dynamic traffic conditions. To address this issue, cooperative control methods based on **Multi-Agent Reinforcement Learning (MARL)**, especially those using **Multi-Agent Q-value Decomposition (MFQ)** and **Multilayer Perceptron (MLP)** models, offer a promising solution.
