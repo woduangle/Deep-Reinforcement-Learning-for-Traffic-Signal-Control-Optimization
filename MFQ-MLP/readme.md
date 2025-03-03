@@ -40,7 +40,7 @@ $$
 Where:
 
 - $$Q_{\text{total}} $$ is the global Q-value,
-- $$ Q_i $$ is the local Q-value for each intersection $i$.
+- $$Q_i$$ is the local Q-value for each intersection $i$.
 
 ### **Multilayer Perceptron (MLP)**
 
