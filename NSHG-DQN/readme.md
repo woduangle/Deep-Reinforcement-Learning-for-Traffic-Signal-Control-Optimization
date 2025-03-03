@@ -39,15 +39,17 @@ $$
 #### Q-Value Update for P-Agent and S-Agent
 
 - In the **NSHG-DQN** algorithm, the Q-value for the P-Agent is updated based on the upper-level game equilibrium value $$V_{\text{al}}^t_i$$ , as follows:
-  $$Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_i \right]$$
+$$
+Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_i \right]
+$$
   where:  $$\alpha$$ is the learning rate, $$\gamma$$  is the discount factor,  $$r_t$$  is the immediate reward at time $$t$$,
   
   -  $$V_{\text{al}}^t_i$$ is the upper-level game equilibrium value of **P-Agent**.
     For the **S-Agent**, its Q-value update is based on the lower-level game equilibrium value  $$V_{\text{al}}^t_j$$ , as follows:
     
-    $$
-    Q_j^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_j^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_j \right]
-    $$
+$$
+Q_j^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_j^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_j \right]
+$$
     
     where$$V_{\text{al}}^t_j$$ is the lower-level game equilibrium value of **S-Agent**.
 
