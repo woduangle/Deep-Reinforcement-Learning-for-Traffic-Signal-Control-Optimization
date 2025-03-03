@@ -44,7 +44,7 @@ The Q-value for the P-Agent is updated based on the upper-level game equilibrium
 
 
 $$
-Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\{\text{al}\}}^{t}_{i} \right]
+Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{al}^{t}_{i} \right]
 $$
 
 
