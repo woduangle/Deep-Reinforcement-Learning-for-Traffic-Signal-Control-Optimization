@@ -65,10 +65,13 @@ Where \(V_{\text{al}}^t_j\) is the lower-level game equilibrium value of the **S
 #### Computation of Equilibrium Values
 
 - In **NSHG-DQN**, the upper-level game equilibrium value \( V_{\text{al}}^t_i \) for the P-Agent is computed using the Nash equilibrium, given by:
+
 $$
 V_{\text{al}}^t_i = \max_{a_i} Q_i^t(s_i, a_1, \dots, a_n)
 $$
-  The lower-level game equilibrium value$  V_{\text{al}}^t_j  $for the S-Agent is computed using the Stackelberg equilibrium:
+
+  The lower-level game equilibrium value $$V_{\text{al}}^t_j$$ for the S-Agent is computed using the Stackelberg equilibrium:
+
 $$
 V_{\text{al}}^t_j = \max_{a_j} Q_j^t(s_j, a_1, \dots, a_n)
 $$
