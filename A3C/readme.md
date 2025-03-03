@@ -6,8 +6,7 @@
 1. [Introduction](#1-introduction)
 2. [Method](#2-method)
 3. [Experiments](#3-experiments)
-4. [Results](#4-results)
-5. [Conclusions](#5-conclusions)
+4. [Conclusions](#4-conclusions)
 
 ---
 ### 1. Introduction 
@@ -87,5 +86,5 @@ Here, $$H(\pi(s_t; \theta))$$ is the entropy of the policy. $$\pi(a | s_t; \thet
 
 ---
 
-### 5. Conclusions 
+### 4. Conclusions 
 When applying A3C to traffic signal control within SUMO, different agents can be set for various intersections. These agents use SUMO's API to obtain real-time traffic data (such as vehicle waiting times, queue lengths, etc.) as input states. Based on this information, agents decide when to switch the traffic light colors aiming to minimize total waiting time and optimize traffic flow. SUMO allows simulating complex traffic scenarios, enabling the A3C model to train and test under conditions close to the real world.
