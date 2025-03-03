@@ -28,12 +28,12 @@ $$
 Q_i^*(s_i, a_1, \cdots,a_n) = r_i(s_i, a_1, \cdots, a_n) + \beta \sum_{s'} p(s'|s_i, a_1, \cdots, a_n) \cdot v_i(s', \pi_1^*, \cdots, \pi_n)
 $$
 
-- Here, $$ v_i(s', \pi_1^*, \dots, \pi_n)$$ is the discounted reward in the equilibrium strategy of the hierarchical game.
+- Here, $$v_i(s', \pi_1^*, \dots, \pi_n)$$ is the discounted reward in the equilibrium strategy of the hierarchical game.
 
 #### NSHG-DQN Algorithm Overview
 
 - This section presents the **NSHG-DQN** algorithm, a multi-agent reinforcement learning algorithm based on the **Nash-Stackelberg Hierarchical Game Model**. NSHG-DQN is an algorithm that integrates **Deep Q-Learning (DQN)** with game theory to solve multi-intersection traffic signal control.
-- In a multi-agent environment, the Q-value function for each agent is defined as $Q_i^*(s_i, a_1, a_2, \dots, a_n)$, where $s_i$ is the local state of agent $ i $, and $ a_1, a_2, \dots, a_n $ are the joint actions of all agents. To achieve hierarchical game equilibrium, the algorithm replaces the traditional maximization operator with a **Nash equilibrium** and **Stackelberg equilibrium** based on game theory.
+- In a multi-agent environment, the Q-value function for each agent is defined as $Q_i^*(s_i, a_1, a_2, \dots, a_n)$, where $s_i$ is the local state of agent $$ i $$, and $$ a_1, a_2, \dots, a_n $$ are the joint actions of all agents. To achieve hierarchical game equilibrium, the algorithm replaces the traditional maximization operator with a **Nash equilibrium** and **Stackelberg equilibrium** based on game theory.
 
 ## Q-Value Update for P-Agent and S-Agent
 
