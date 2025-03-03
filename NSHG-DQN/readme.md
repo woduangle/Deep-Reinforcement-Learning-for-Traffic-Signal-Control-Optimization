@@ -25,7 +25,7 @@ In this hierarchical game model, the P-Agent and S-Agent collaborate to optimize
 - In Nash-DuelingDQN, the state-action value function is approximated using a deep neural network. The goal of each agent is to learn an approximately optimal policy through interaction with other agents. The Q-value update formula is as follows:
 
 $$
-Q_i^*(s_i, a_1, \dots,a_n) = r_i(s_i, a_1, \dots, a_n) + \beta \sum_{s'} p(s'|s_i, a_1, \dots, a_n) \cdot v_i(s', \pi_1^*, \dots, \pi_n)
+Q_i^*(s_i, a_1, \cdots,a_n) = r_i(s_i, a_1, \cdots, a_n) + \beta \sum_{s'} p(s'|s_i, a_1, \cdots, a_n) \cdot v_i(s', \pi_1^*, \cdots, \pi_n)
 
 $$
 
