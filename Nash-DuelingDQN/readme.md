@@ -37,15 +37,15 @@ $$
 
 - where:
   
-  - $Q(s, a)$ is the Q-value for taking action $a$ in state $s$;
+  - $$Q(s, a)$$ is the Q-value for taking action $$a$$ in state $$s$$;
   
-  - $Q(s, a) $is the Q-value for taking action $ a $ in state $  s $;
+  - $$Q(s, a)$$is the Q-value for taking action $$a$$ in state $$s$$;
   
-  - $ R  $ is the immediate reward;
+  - $$R$$ is the immediate reward;
   
-  - $ \gamma  $ is the discount factor;
+  - $$\gamma$$ is the discount factor;
   
-  - $\max_{a'} Q(s', a') $is the maximum Q-value in the next state $ s' $.
+  - $$\max_{a'} Q(s', a') $$ is the maximum Q-value in the next state $$s'$$.
 
 ### 3. Experiments
 
