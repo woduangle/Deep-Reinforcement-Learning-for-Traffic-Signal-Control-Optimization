@@ -86,7 +86,9 @@ To evaluate the effectiveness of **Nash-DuelingDQN**, we will compare its perfor
 
 In this study, the reward function is designed based on the change in vehicle waiting time:
 
-\mathcal{R}_t =$$  D_t - D_{t+1}$$ 
+$$
+\mathcal{R}_t =  D_t - D_{t+1}
+$$ 
 
 where:
 
