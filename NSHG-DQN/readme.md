@@ -56,7 +56,7 @@ Where:
 For the **S-Agent**, its Q-value update is based on the lower-level game equilibrium value \(V_{\text{al}}^t_j\), as follows:
 
 $$
-Q_j^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_j^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_j \right]
+Q_j^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_j^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^{t}_{j} \right]
 $$
 
 Where \(V_{\text{al}}^t_j\) is the lower-level game equilibrium value of the **S-Agent**.
