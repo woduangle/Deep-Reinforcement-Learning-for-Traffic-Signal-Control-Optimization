@@ -39,13 +39,15 @@ $$
 #### Q-Value Update for P-Agent and S-Agent
 
 - In the **NSHG-DQN** algorithm, the Q-value for the P-Agent is updated based on the upper-level game equilibrium value $$V_{\text{al}}^t_i$$ , as follows:
+
 $$
 Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_i \right]
 $$
   where:  $$\alpha$$ is the learning rate, $$\gamma$$  is the discount factor,  $$r_t$$  is the immediate reward at time $$t$$,
   
-  -  $$V_{\text{al}}^t_i$$ is the upper-level game equilibrium value of **P-Agent**.
-    For the **S-Agent**, its Q-value update is based on the lower-level game equilibrium value  $$V_{\text{al}}^t_j$$ , as follows:
+-  $$V_{\text{al}}^t_i$$ is the upper-level game equilibrium value of **P-Agent**.
+
+For the **S-Agent**, its Q-value update is based on the lower-level game equilibrium value  $$V_{\text{al}}^t_j$$ , as follows:
     
 $$
 Q_j^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_j^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_j \right]
@@ -56,13 +58,13 @@ $$
 #### Computation of Equilibrium Values
 
 - In **NSHG-DQN**, the upper-level game equilibrium value \( V_{\text{al}}^t_i \) for the P-Agent is computed using the Nash equilibrium, given by:
-  $$
-  V_{\text{al}}^t_i = \max_{a_i} Q_i^t(s_i, a_1, \dots, a_n)
-  $$
+$$
+V_{\text{al}}^t_i = \max_{a_i} Q_i^t(s_i, a_1, \dots, a_n)
+$$
   The lower-level game equilibrium value$  V_{\text{al}}^t_j  $for the S-Agent is computed using the Stackelberg equilibrium:
-  $$
-  V_{\text{al}}^t_j = \max_{a_j} Q_j^t(s_j, a_1, \dots, a_n)
-  $$
+$$
+V_{\text{al}}^t_j = \max_{a_j} Q_j^t(s_j, a_1, \dots, a_n)
+$$
 
 Compared to traditional Q-learning algorithms, **NSHG-DQN** does not solely rely on maximizing the individual agent’s Q-values but instead adjusts them based on the equilibrium strategies of the hierarchical game. This approach not only better simulates the collaborative relationships between multiple intersections but also significantly improves the coordination and efficiency of the entire traffic system.
 
