@@ -26,7 +26,6 @@ In this hierarchical game model, the P-Agent and S-Agent collaborate to optimize
 
 $$
 Q_i^*(s_i, a_1, \cdots,a_n) = r_i(s_i, a_1, \cdots, a_n) + \beta \sum_{s'} p(s'|s_i, a_1, \cdots, a_n) \cdot v_i(s', \pi_1^*, \cdots, \pi_n)
-
 $$
 
 - Here, $$ v_i(s', \pi_1^*, \dots, \pi_n)$$ is the discounted reward in the equilibrium strategy of the hierarchical game.
@@ -44,7 +43,7 @@ In the **NSHG-DQN** algorithm, the Q-value updates for the P-Agent and S-Agent a
 The Q-value for the P-Agent is updated based on the upper-level game equilibrium value \(V_{\text{al}}^t_i\), as follows:
 
 $$
-Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^t_i \right]
+Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^{t}_{i} \right]
 $$
 
 Where:
