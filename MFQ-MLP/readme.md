@@ -39,8 +39,8 @@ $$
 
 Where:
 
-- $ Q_{\text{total}}  $is the global Q-value,
-- $ Q_i $ is the local Q-value for each intersection $i$.
+- $$Q_{\text{total}} $$ is the global Q-value,
+- $$ Q_i $$ is the local Q-value for each intersection $i$.
 
 ### **Multilayer Perceptron (MLP)**
 
@@ -62,11 +62,11 @@ $$
 
 Where:
 
-- $ \alpha  $ is the learning rate,
-- $ \gamma $ is the discount factor,
-- $ r_t $ is the immediate reward,
-- $ s_t' $ is the next state,
-- $\ a'_i $ is the next action.
+- $$ \alpha  $$ is the learning rate,
+- $$ \gamma $$ is the discount factor,
+- $$ r_t $$ is the immediate reward,
+- $$ s_t' $$ is the next state,
+- $$\ a'_i $$ is the next action.
 
 Compared to traditional Q-learning algorithms, the **MFQ-MLP** algorithm can handle multi-intersection coordination problems more effectively by combining Q-value decomposition and MLP. The Q-value decomposition allows each intersection to independently learn its own control strategy, while the MLP network improves learning ability and accuracy in high-dimensional environments, significantly improving the performance of traffic signal control.
 
@@ -92,7 +92,7 @@ $$
 
 where:
 
-- $D_t$ and $D_{t+1}$ represent the total waiting times at time steps $t$ and $t+1$ , respectively.
+- $$D_t$$ and $$D_{t+1}$$ represent the total waiting times at time steps $$t$$ and $$t+1$$ , respectively.
 
 - The reward function aims to minimize the waiting time at traffic lights, thus improving traffic flow efficiency. 
 
