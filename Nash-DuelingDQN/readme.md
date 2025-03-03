@@ -69,7 +69,7 @@ $$
 
 where:
 
-- $ D_t$ and $ D_{t+1} $represent the total waiting times at time steps $ t $ and $ t+1 $, respectively.
+- $$D_t$$ and $$D_{t+1}$$ represent the total waiting times at time steps $$t$$ and $$t+1$$, respectively.
 
 - The reward function aims to minimize the waiting time at traffic lights, thus improving traffic flow efficiency.
 
