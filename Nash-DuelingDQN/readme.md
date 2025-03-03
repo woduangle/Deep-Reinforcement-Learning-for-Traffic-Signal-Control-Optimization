@@ -9,6 +9,7 @@
 
 ---
 
+
 ### 1. Introduction
 
 - In modern cities, traffic signal control systems are still largely dependent on fixed-time plans, which are unable to adapt to dynamic traffic flows. With urbanization, traffic congestion has become a major issue, leading to environmental pollution, wasted time, and increased energy consumption. To alleviate these problems, optimizing traffic signal control is of utmost importance.
