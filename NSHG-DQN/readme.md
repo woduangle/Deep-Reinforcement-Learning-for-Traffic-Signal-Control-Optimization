@@ -42,9 +42,11 @@ In the **NSHG-DQN** algorithm, the Q-value updates for the P-Agent and S-Agent a
 ### Q-Value Update for P-Agent
 The Q-value for the P-Agent is updated based on the upper-level game equilibrium value \(V_{\text{al}}^t_i\), as follows:
 
+
 $$
-Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\text{al}}^{t}_{i} \right]
+Q_i^{t+1}(s_t, a_1, \dots, a_n) = (1 - \alpha) Q_i^t(s_t, a_1, \dots, a_n) + \alpha \left[ r_t + \gamma V_{\{\text{al}\}}^{t}_{i} \right]
 $$
+
 
 Where:
 - \(\alpha\) is the learning rate,
