@@ -36,17 +36,6 @@ Here, $$Q_{\text{main}}(s', a')$$ is the Q-value predicted by the main network t
 
 ---
 
-- #### Experience Replay Formula
-Experience replay breaks data correlation by storing and randomly sampling past experiences, improving training stability.
-
-$$
-\text{Loss} = \mathbb{E}_{(s, a, r, s') \sim \mathcal{D}} \left[ \left( r + \gamma Q_{\text{target}}(s', \arg\max_{a'} Q_{\text{main}}(s', a')) - Q(s, a) \right)^2 \right]
-$$
-
-Here, $$\mathcal{D}$$ is the experience replay buffer. $$(s, a, r, s')$$ is a tuple sampled from the buffer, representing the current state $$s$$, action $$a$$, reward $$r$$, and next state $$s'$$. The loss function minimizes the difference between the predicted Q-value $$Q(s, a)$$ and the target Q-value.
-
----
-
 - #### Loss Function Formula
 The loss function measures the difference between the predicted Q-value and the target Q-value, typically using Mean Squared Error (MSE).
 
