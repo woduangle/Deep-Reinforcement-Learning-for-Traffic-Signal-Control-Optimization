@@ -6,8 +6,7 @@
 1. [Introduction](#1-introduction)
 2. [Method](#2-method)
 3. [Experiments](#3-experiments)
-4. [Results](#4-results)
-5. [Conclusions](#5-conclusions)
+4. [Conclusions](#4-conclusions)
 
 ---
 ### 1. Introduction 
@@ -83,5 +82,8 @@ $$
 
 Here, $$a$$ is the selected action. With probability $$\epsilon$$, a random action is chosen to encourage exploration. Otherwise, the action with the highest Q-value $$\arg\max_a Q(s, a)$$ is selected for exploitation.
 
-### 5. Conclusions 
+### 3. Experiences
+To evaluate the DDQN-DNN algorithm, we conducted experiments using SUMO (Simulation of Urban MObility) to simulate urban traffic environments. The model was trained to optimize traffic signal control, with the state space including vehicle density and queue lengths, and the action space consisting of phase switching decisions. Over multiple episodes, DDQN-DNN demonstrated faster convergence and reduced average waiting times compared to traditional DQN, owing to its improved Q-value estimation. The integration with SUMO showcased its ability to adapt to dynamic traffic patterns, effectively minimizing congestion in simulated urban scenarios. These results validate the algorithm's efficacy in real-world-inspired traffic management tasks.
+
+### 4. Conclusions 
 In conclusion, the DDQN-DNN algorithm effectively addresses the overestimation issue of traditional DQN by decoupling action selection and evaluation, leading to more stable and accurate Q-value predictions. When integrated with SUMO (Simulation of Urban MObility), DDQN-DNN demonstrates its capability to optimize traffic signal control by learning adaptive policies that minimize congestion and improve traffic flow. The use of experience replay and target networks further enhances training stability, making it suitable for dynamic and complex urban traffic scenarios simulated in SUMO. This combination highlights the potential of reinforcement learning in intelligent transportation systems.
