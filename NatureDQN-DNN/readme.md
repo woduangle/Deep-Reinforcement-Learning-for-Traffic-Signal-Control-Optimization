@@ -9,6 +9,7 @@
 4. [Conclusions](#4-conclusions)
 
 ---
+
 ### 1. Introduction 
 
 - NatureDQN-DNN is a deep reinforcement learning algorithm that combines Q-learning with deep neural networks (DNNs) to approximate the Q-value function for high-dimensional inputs, such as images. It employs experience replay to stabilize training by reducing correlations between samples and uses a target network to provide stable Q-value targets. The DNN architecture typically includes convolutional layers for feature extraction and fully connected layers for decision-making. By addressing instability in Q-learning, NatureDQN-DNN achieves human-level performance in complex tasks like Atari games. This approach bridges deep learning and reinforcement learning, paving the way for advanced RL algorithms. Its success highlights the potential of deep neural networks in solving high-dimensional control problems.
